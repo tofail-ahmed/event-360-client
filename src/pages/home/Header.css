@@ -1,0 +1,25 @@
+.brand_new_packages{
+      color: #000;
+
+      font-family: Roboto;
+      font-size: 60px;
+      font-style: normal;
+      font-weight: 800;
+      line-height: 110%; /* 70.4px */
+      text-transform: uppercase;
+      font-family: 'Roboto', sans-serif; 
+}
+
+.winter {
+      background: linear-gradient(276deg, #5A01CB 37.08%, #FE8900 57.18%);
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-family: 'Roboto', sans-serif;
+      font-size: 56px;
+      font-style: normal;
+      font-weight: 800;
+      line-height: 110%;
+      display: inline-block; /* Ensures inline elements like span behave as expected */
+    }
+    
