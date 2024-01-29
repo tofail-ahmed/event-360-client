@@ -1,0 +1,9 @@
+.homeBg {
+      /* Set background image for the entire page */
+      background: url('/src/assets/mesh-gradient.png') no-repeat center center fixed;
+      /* Adjust background size as needed */
+    
+      background-size: cover;
+      /* Set a fallback background color in case the image is not available or not loaded */
+      background-color: #db1414;
+    }
