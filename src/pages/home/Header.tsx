@@ -3,7 +3,10 @@ import Container from "../../component/Container";
 import { NavLink } from "react-router-dom";
 import './Header.css'
 import seminar from "../../assets/seminar.png"
-import icon from "../../assets/Icons.png";
+import indigo from '../../assets/icon_indigo.png'
+import amber from '../../assets/icon_amber.png'
+import blue from '../../assets/Icons_blue.png'
+
 const Header = () => {
   return (
     <Container>
@@ -30,7 +33,7 @@ const Header = () => {
           </nav>
         </div>
         <div className="flex lg:flex-row flex-col justify-between items-center ">
-          <div>
+          <div className="flex flex-col text-center lg:text-start">
             <h1 className="brand_new_packages mb-[8px]">
               Brand New <br />
               event Packages
@@ -44,11 +47,13 @@ const Header = () => {
               atque excepturi consectetur. Cumque perferendis beatae assumenda
               sunt, in nemo facilis laborum consequuntur aut pariatur.
             </h3>
-            <div className="w-[195px] h-[52px] px-10 py-6 bg-blue-600 justify-center items-center gap-2.5 inline-flex">
-              <div className="text-white text-base font-bold font-['Plus Jakarta Sans']">
-                Explore
+            <div>
+              <div className="w-[195px] h-[52px] px-10 py-6 bg-blue-600 justify-center items-center gap-2.5 inline-flex">
+                <div className="text-white text-base font-bold font-['Plus Jakarta Sans']">
+                  Explore
+                </div>
               </div>
-            </div>{" "}
+            </div>
           </div>
           <div>
             <img
@@ -58,51 +63,60 @@ const Header = () => {
             />
           </div>
         </div>
-        <div className="max-w-[720px] h-[194px] grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 ">
-          <div className="px-4 py-6 bg-gradient-to-br from-white to-white rounded-[32px] border-2 border-white backdrop-blur-sm max-w-[220px]">
-            <div className="flex-col justify-start items-start gap-8 flex">
-              <div className="justify-start items-center gap-[194px] inline-flex">
-                <div className="w-12 h-12 relative">
-                  <div className="w-12 h-12 left-0 top-0 absolute bg-indigo-500 bg-opacity-30 rounded-full" />
-                  <div className="w-6 h-6 left-[12px] top-[12px] absolute" />
+        <div className="pb-[100px]">
+          <div className="max-w-[720px] grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:-mt-[60px] mt-[50px]  ">
+            <div className="lg:max-w-[220px] w-[300px] mx-auto ">
+              <div className="px-4 py-6 bg-gradient-to-br from-white to-white rounded-[32px] border-2 border-white backdrop-blur-sm">
+                <div className="flex-col justify-start lg:items-start items-center gap-8 flex">
+                  <div className="justify-start items-center inline-flex">
+                    <div className="w-12 h-12 relative">
+                      <div className="w-12 h-12 left-0 top-0 absolute bg-indigo-500 bg-opacity-30 rounded-full" />
+                      <div className="w-6 h-6 left-[12px] top-[12px] absolute"><img src={indigo} alt="" /></div>
+                    </div>
+                  </div>
+                  <div className="w-48 text-zinc-800 text-base font-light font-['Lato'] leading-snug">
+                    Lorem ipsum dolor sit amet, consectetu adipiscing elit.
+                    Cursus imperdiet sed id.
+                  </div>
                 </div>
               </div>
-              <div className="w-48 text-zinc-800 text-base font-light font-['Lato'] leading-snug">
-                Lorem ipsum dolor sit amet, consectetu adipiscing elit. Cursus
-                imperdiet sed id.
-              </div>
             </div>
-          </div>
-          <div className="px-4 py-6 bg-gradient-to-br from-white to-white rounded-[32px] border-2 border-white backdrop-blur-sm max-w-[220px]">
-            <div className="flex-col justify-start items-start gap-8 flex">
-              <div className="justify-start items-center gap-[194px] inline-flex">
-                <div className="w-12 h-12 relative">
-                  <div className="w-12 h-12 left-0 top-0 absolute bg-indigo-500 bg-opacity-30 rounded-full" />
-                  <div className="w-6 h-6 left-[12px] top-[12px] absolute" />
-                </div>
-              </div>
-              <div className="w-48 text-zinc-800 text-base font-light font-['Lato'] leading-snug">
-                Lorem ipsum dolor sit amet, consectetu adipiscing elit. Cursus
-                imperdiet sed id.
-              </div>
-            </div>
-          </div>
-          <div className="px-4 py-6 bg-gradient-to-br from-white to-white rounded-[32px] border-2 border-white backdrop-blur-sm max-w-[220px]">
-            <div className="flex-col justify-start items-start gap-8 flex">
-              <div className="justify-start items-center gap-[194px] inline-flex">
-                <div className="w-12 h-12 relative">
-                  <div className="w-12 h-12 left-0 top-0 absolute bg-indigo-500 bg-opacity-30 rounded-full" />
-                  <div className="w-6 h-6 left-[12px] top-[12px] absolute" />
-                </div>
-              </div>
-              <div className="w-48 text-zinc-800 text-base font-light font-['Lato'] leading-snug">
-                Lorem ipsum dolor sit amet, consectetu adipiscing elit. Cursus
-                imperdiet sed id.
-              </div>
-            </div>
-          </div>
 
-          
+            <div className="lg:max-w-[220px] w-[300px] mx-auto ">
+              <div className="px-4 py-6 bg-gradient-to-br from-white to-white rounded-[32px] border-2 border-white backdrop-blur-sm">
+                <div className="flex-col justify-start lg:items-start items-center gap-8 flex">
+                  <div className="justify-start items-center inline-flex">
+                    <div className="w-12 h-12 relative">
+                      <div className="w-12 h-12 left-0 top-0 absolute bg-amber-300 bg-opacity-30 rounded-full" />
+                      <div className="w-6 h-6 left-[12px] top-[12px] absolute"><img src={amber} alt="" /></div>
+                      
+                    </div>
+                  </div>
+                  <div className="w-48 text-zinc-800 text-base font-light font-['Lato'] leading-snug">
+                    Lorem ipsum dolor sit amet, consectetu adipiscing elit.
+                    Cursus imperdiet sed id.
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="lg:max-w-[220px] w-[300px] mx-auto ">
+              <div className="px-4 py-6 bg-gradient-to-br from-white to-white rounded-[32px] border-2 border-white backdrop-blur-sm">
+                <div className="flex-col justify-start lg:items-start items-center gap-8 flex">
+                  <div className="justify-start items-center inline-flex">
+                    <div className="w-12 h-12 relative">
+                      <div className="w-12 h-12 left-0 top-0 absolute bg-blue-300 bg-opacity-30 rounded-full" />
+                      <div className="w-6 h-6 left-[12px] top-[12px] absolute"><img src={blue} alt="" /></div>
+                    </div>
+                  </div>
+                  <div className="w-48 text-zinc-800 text-base font-light font-['Lato'] leading-snug">
+                    Lorem ipsum dolor sit amet, consectetu adipiscing elit.
+                    Cursus imperdiet sed id.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </Container>
