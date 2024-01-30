@@ -3,3 +3,29 @@
       background: linear-gradient(70deg, #d14cf210 20.08%, #01e5d60c );
 
 }
+
+.transition {
+      transition: all 5s ease-in-out !important; /* Adjust duration and timing function as needed */
+
+}
+.serviceHead{
+      color: #000;
+      text-align: center;
+      font-family: 'Roboto', sans-serif; 
+
+      font-size: 64px;
+      
+      font-weight: 800;
+     
+}
+.serviceDescrp{
+      color: #566B84;
+      text-align: center;
+      
+      /* Body/L */
+      font-family: 'Roboto', sans-serif; 
+      font-size: 18px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 160%; /* 28.8px */
+}

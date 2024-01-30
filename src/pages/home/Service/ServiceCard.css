@@ -1,0 +1,26 @@
+.serviceCardHead{
+      color: #000;
+      text-align: start;
+      font-family: "Roboto",sans-serif;
+      font-size: 32px;
+      font-style: normal;
+      font-weight: 800;
+      line-height: 110%; /* 35.2px */
+}
+.feature{
+      color: #000;
+
+      font-family: "Plus Jakarta Sans";
+      font-size: 18px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 150%; /* 27px */
+}
+.hoverDescrp{
+      color: #566B84;
+      font-family: Roboto;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 160%; /* 25.6px */
+}
