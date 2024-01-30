@@ -6,7 +6,8 @@ import seminar from "../../assets/seminar.png"
 import indigo from '../../assets/icon_indigo.png'
 import amber from '../../assets/icon_amber.png'
 import blue from '../../assets/Icons_blue.png'
-
+import star from '../../assets/Star.png'
+import softstar2 from '../../assets/Soft_Star_2.png'
 const Header = () => {
   return (
     <Container>
@@ -55,12 +56,20 @@ const Header = () => {
               </div>
             </div>
           </div>
-          <div>
-            <img
+          <div className=" relative">
+            <div className="absolute top-14 left-8">
+              <img src={star} alt="" />
+            </div>
+           <div>
+           <img
               className="rounded-[800px] mx-auto p-[50px] border-[1px] border-black mt-[20px]"
               src={seminar}
               alt=""
             />
+           </div>
+           <div className="absolute bottom-5 right-1">
+              <img src={softstar2} alt="" />
+            </div>
           </div>
         </div>
         <div className="pb-[100px]">
