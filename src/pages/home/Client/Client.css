@@ -3,3 +3,15 @@
 
 backdrop-filter: blur(2px);
 }
+
+.clientText{
+      color: #000;
+text-align: center;
+font-feature-settings: 'clig' off, 'liga' off;
+font-family: 'Roboto', sans-serif; 
+font-size: 64px;
+font-style: normal;
+font-weight: 800;
+line-height: normal;
+text-transform: capitalize;
+}
