@@ -11,7 +11,7 @@
 }
 
 .winter {
-      background: linear-gradient(276deg, #5A01CB 37.08%, #FE8900 57.18%);
+      background: linear-gradient(276deg, #5A01CB 30.08%, #FE8900 );
       background-clip: text;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;

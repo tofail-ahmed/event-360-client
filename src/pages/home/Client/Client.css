@@ -1,0 +1,5 @@
+.clientBg{
+      background: rgba(250, 250, 250, 0.50);
+
+backdrop-filter: blur(2px);
+}
