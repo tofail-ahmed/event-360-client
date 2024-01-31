@@ -25,25 +25,25 @@ const Client = () => {
       <div className='grid lg:grid-cols-5 md:grid-cols-3 grid-cols-2'>
 
             <img data-aos="fade-up" data-aos-delay="50"
-    data-aos-duration="1000" className='mx-auto my-[45px]' src={spotify} alt="" />
+    data-aos-duration="3000" className='mx-auto my-[45px]' src={spotify} alt="" />
             <img data-aos="fade-up" data-aos-delay="50"
-    data-aos-duration="1000" className='mx-auto my-[45px]' src={google} alt="" />
+    data-aos-duration="3000" className='mx-auto my-[45px]' src={google} alt="" />
             <img data-aos="fade-up" data-aos-delay="50"
-    data-aos-duration="1000" className='mx-auto my-[45px]' src={uber} alt="" />
+    data-aos-duration="3000" className='mx-auto my-[45px]' src={uber} alt="" />
             <img data-aos="fade-up" data-aos-delay="50"
-    data-aos-duration="1000" className='mx-auto my-[45px]' src={microsoft} alt="" />
+    data-aos-duration="3000" className='mx-auto my-[45px]' src={microsoft} alt="" />
             <img data-aos="fade-up" data-aos-delay="50"
-    data-aos-duration="1000" className='mx-auto my-[45px]' src={shopify} alt="" />
+    data-aos-duration="3000" className='mx-auto my-[45px]' src={shopify} alt="" />
             <img data-aos="fade-up" data-aos-delay="50"
-    data-aos-duration="1000" className='mx-auto my-[45px]' src={evernote} alt="" />
+    data-aos-duration="3000" className='mx-auto my-[45px]' src={evernote} alt="" />
             <img data-aos="fade-up" data-aos-delay="50"
-    data-aos-duration="1000" className='mx-auto my-[45px]' src={adobe} alt="" />
+    data-aos-duration="3000" className='mx-auto my-[45px]' src={adobe} alt="" />
             <img data-aos="fade-up" data-aos-delay="50"
-    data-aos-duration="1000" className='mx-auto my-[45px]' src={paypal} alt="" />
+    data-aos-duration="3000" className='mx-auto my-[45px]' src={paypal} alt="" />
             <img data-aos="fade-up" data-aos-delay="50"
-    data-aos-duration="1000" className='mx-auto my-[45px]' src={amazon} alt="" />
+    data-aos-duration="3000" className='mx-auto my-[45px]' src={amazon} alt="" />
             <img data-aos="fade-up" data-aos-delay="50"
-    data-aos-duration="1000" className='mx-auto my-[45px]' src={asana} alt="" />
+    data-aos-duration="3000" className='mx-auto my-[45px]' src={asana} alt="" />
       </div>
      </div>
     </Container>
