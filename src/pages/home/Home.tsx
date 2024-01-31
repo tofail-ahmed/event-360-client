@@ -4,6 +4,7 @@ import '../home/Home.css'
 import Client from './Client/Client'
 import Service from './Service/Service'
 import Event from './event/Event'
+import Gallery from './Gallery/Gallery'
 const Home = () => {
   return (
     <div className="homeBg">
@@ -12,6 +13,7 @@ const Home = () => {
       <div>
         <Client></Client>
         <Event></Event>
+        <Gallery></Gallery>
       </div>
     </div>
   );

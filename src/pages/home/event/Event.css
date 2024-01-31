@@ -1,0 +1,9 @@
+.eventHead{
+      color: #000;
+      text-align: center;
+      font-family: 'Roboto',sans-serif;
+      font-size: 64px;
+      font-style: normal;
+      font-weight: 800;
+      line-height: 110%; /* 70.4px */   
+}
