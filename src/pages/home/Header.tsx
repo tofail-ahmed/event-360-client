@@ -44,7 +44,8 @@ const Header = () => {
   return (
     <Container>
       <div>
-        <div className="flex justify-between items-center py-[24px]">
+       <div className="">
+       <div className="flex justify-between items-center py-[24px] ">
           <h1 className="font-[700] text-[32px]">
             <span>Event</span> <span className="text-[#3461FF]">360</span>
           </h1>
@@ -65,6 +66,7 @@ const Header = () => {
             </button>
           </nav>
         </div>
+       </div>
         <div className="flex lg:flex-row flex-col justify-between items-center ">
           <motion.div variants={parent} initial="initial" animate="animate" className="flex flex-col text-center lg:text-start">
             <motion.h1 variants={parent} className="brand_new_packages mb-[8px]">
