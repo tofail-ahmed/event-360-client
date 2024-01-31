@@ -6,8 +6,8 @@ import event_3 from "../../../assets/event_3.png";
 import event_4 from "../../../assets/event_4.png";
 import event_5 from "../../../assets/event_5.png";
 import event_6 from "../../../assets/event_6.png";
-import './Event.css'
-const Event = () => {
+import './EventItems.css'
+const EventItems = () => {
   return (
     <Container >
       <div className="text-center my-16">
@@ -51,4 +51,4 @@ const Event = () => {
   );
 };
 
-export default Event;
+export default EventItems;

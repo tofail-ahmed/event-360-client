@@ -17,11 +17,11 @@ import check from "../../../assets/fi_check.png";
 const Gallery = () => {
   AOS.init();
   return (
-    <Container className="flex justify-between items-center lg:flex-row flex-col">
+    <Container className="flex justify-between items-center lg:flex-row flex-col-reverse py-16">
       <div>
         <div className="lg:text-start text-center">
           <h1 className="galleryHead mb-9">Gallery</h1>
-          <p className="galleryDescrp max-w-[520px] mb-8">
+          <p className="galleryDescrp max-w-[400px] lg:max-w-[520px] mb-8">
             Ut posuere felis arcu tellus tempus in in ultricies. Gravida id nibh
             ornare viverra. Ultrices faucibus neque velit risus ac id lorem.Ut
             posuere felis arcu tellus tempus in in ultricies. Gravida id nibh
