@@ -11,132 +11,154 @@ import gallery_7 from "../../../assets/gallery/picture_7.png";
 import gallery_8 from "../../../assets/gallery/picture_8.png";
 import gallery_9 from "../../../assets/gallery/picture_9.png";
 import gallery_10 from "../../../assets/gallery/picture_10.png";
+import Container from "../../../component/Container";
+import "./Gallery.css";
+import check from "../../../assets/fi_check.png";
 const Gallery = () => {
   AOS.init();
   return (
-    <div className="overflow-hidden">
-      <div
-        style={{
-          width: "100%",
-          height: "100%",
-          justifyContent: "flex-start",
-          alignItems: "center",
-          gap: 16,
-          display: "inline-flex",
-        }}
-      >
+    <Container className="flex justify-between items-center lg:flex-row flex-col">
+      <div>
+        <div className="lg:text-start text-center">
+          <h1 className="galleryHead mb-9">Gallery</h1>
+          <p className="galleryDescrp max-w-[520px] mb-8">
+            Ut posuere felis arcu tellus tempus in in ultricies. Gravida id nibh
+            ornare viverra. Ultrices faucibus neque velit risus ac id lorem.Ut
+            posuere felis arcu tellus tempus in in ultricies. Gravida id nibh
+            ornare viverra. Ultrices faucibus neque velit risus ac id lorem.
+          </p>
+          <div className="flex flex-col lg:justify-start justify-center">
+            <div className="flex gap-4 mb-4">
+              <img className="bg-white rounded-[100%] p-1" src={check} alt="" />
+              <p className="galleryFeature">One day pas access all lecture</p>
+            </div>
+            <div className="flex gap-4 mb-4">
+              <img className="bg-white rounded-[100%] p-1" src={check} alt="" />
+              <p className="galleryFeature">One day pas access all lecture</p>
+            </div>
+            <div className="flex gap-4 mb-4">
+              <img className="bg-white rounded-[100%] p-1" src={check} alt="" />
+              <p className="galleryFeature">One day pas access all lecture</p>
+            </div>
+            <div className="flex gap-4 mb-4">
+              <img className="bg-white rounded-[100%] p-1" src={check} alt="" />
+              <p className="galleryFeature">One day pas access all lecture</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="mx-auto overflow-hidden">
         <div
           style={{
-            paddingTop: 80,
-            flexDirection: "column",
-            justifyContent: "center",
-            alignItems: "flex-end",
+            width: "100%",
+            height: "100%",
+            justifyContent: "flex-start",
+            alignItems: "center",
             gap: 16,
             display: "inline-flex",
           }}
         >
+          <div
+            style={{
+              paddingTop: 80,
+              flexDirection: "column",
+              justifyContent: "center",
+              alignItems: "flex-end",
+              gap: 16,
+              display: "inline-flex",
+            }}
+          >
             <div  className="hover:scale-125 duration-300">
-          <img
-            data-aos="fade-right"
-            data-aos-delay="50"
-            data-aos-duration="2000"
+            <img 
            
-            style={{
-              width: 128,
-              height: 192,
-              boxShadow: "0px 0px 4px rgba(0, 0, 0, 0.07)",
-              borderRadius: 5,
-            }}
-            src={gallery_1}
-          />
-          </div>
-          <div className="hover:scale-125 duration-300">
-          <img
             data-aos="fade-right"
-            data-aos-delay="50"
-            data-aos-duration="2000"
+              style={{
+                width: 128,
+                height: 192,
+                boxShadow: "0px 0px 4px rgba(0, 0, 0, 0.07)",
+                borderRadius: 5,
+              }}
+              src={gallery_1}
+            />
+            </div>
+            <div className="hover:scale-125 duration-300">
+            <img 
             
-            style={{
-              width: 172,
-              height: 258,
-              boxShadow: "0px 0px 4px rgba(0, 0, 0, 0.07)",
-              borderRadius: 5,
-            }}
-            src={gallery_2}
-          />
+            data-aos="fade-right"
+              style={{
+                width: 172,
+                height: 258,
+                boxShadow: "0px 0px 4px rgba(0, 0, 0, 0.07)",
+                borderRadius: 5,
+              }}
+              src={gallery_2}
+            />
+            </div>
           </div>
-        </div>
 
-        <div
-          style={{
-            paddingTop: 32,
-            flexDirection: "column",
-            justifyContent: "flex-start",
-            alignItems: "flex-start",
-            gap: 16,
-            display: "inline-flex",
-          }}
-        >
-            <div   className="hover:scale-125 duration-300">
-          <img
+          <div
+            style={{
+              paddingTop: 32,
+              flexDirection: "column",
+              justifyContent: "flex-start",
+              alignItems: "flex-start",
+              gap: 16,
+              display: "inline-flex",
+            }}
+          >
+            <div  className="hover:scale-125 duration-300">
+            <img 
+           
             data-aos="fade-up"
-            data-aos-delay="50"
-            data-aos-duration="2000"
+              style={{
+                width: 128,
+                height: 212,
+                boxShadow: "0px 0px 4px rgba(0, 0, 0, 0.07)",
+                borderRadius: 5,
+              }}
+              src={gallery_3}
+            />
+            </div>
+            <div  className="hover:scale-125 duration-300">
+            <img 
           
-            style={{
-              width: 128,
-              height: 212,
-              boxShadow: "0px 0px 4px rgba(0, 0, 0, 0.07)",
-              borderRadius: 5,
-            }}
-            src={gallery_3}
-          />
-          </div>
-          <div     className="hover:scale-125 duration-300">
-          <img
             data-aos="fade-up"
-            data-aos-delay="50"
-            data-aos-duration="2000"
-        
-            style={{
-              width: 128,
-              height: 215,
-              boxShadow: "0px 0px 4px rgba(0, 0, 0, 0.07)",
-              borderRadius: 5,
-            }}
-            src={gallery_4}
-          />
-          </div>
-          <div className="hover:scale-125 duration-300">
-          <img
-            data-aos="fade-up"
-            data-aos-delay="50"
-            data-aos-duration="2000"
+              style={{
+                width: 128,
+                height: 215,
+                boxShadow: "0px 0px 4px rgba(0, 0, 0, 0.07)",
+                borderRadius: 5,
+              }}
+              src={gallery_4}
+            />
+            </div>
+            <div className="hover:scale-125 duration-300">
+            <img 
             
-            style={{
-              width: 128,
-              height: 160,
-              boxShadow: "0px 0px 4px rgba(0, 0, 0, 0.07)",
-              borderRadius: 5,
-            }}
-            src={gallery_5}
-          />
+            data-aos="fade-up"
+              style={{
+                width: 128,
+                height: 160,
+                boxShadow: "0px 0px 4px rgba(0, 0, 0, 0.07)",
+                borderRadius: 5,
+              }}
+              src={gallery_5}
+            />
+            </div>
           </div>
-        </div>
-        <div
-          style={{
-            flexDirection: "column",
-            justifyContent: "flex-start",
-            alignItems: "flex-start",
-            gap: 16,
-            display: "inline-flex",
-          }}
-        >
-          <div className="hover:scale-125 duration-300">
-            <img
-              data-aos="fade-down"
-              data-aos-delay="50"
-              data-aos-duration="2000"
+          <div
+            style={{
+              flexDirection: "column",
+              justifyContent: "flex-start",
+              alignItems: "flex-start",
+              gap: 16,
+              display: "inline-flex",
+            }}
+          >
+            <div className="hover:scale-125 duration-300">
+            <img 
+            
+            data-aos="fade-down"
               style={{
                 width: 128,
                 height: 171,
@@ -145,12 +167,11 @@ const Gallery = () => {
               }}
               src={gallery_6}
             />
-          </div>
-          <div className="hover:scale-125 duration-300">
-            <img
-              data-aos="fade-down"
-              data-aos-delay="50"
-              data-aos-duration="2000"
+            </div>
+            <div className="hover:scale-125 duration-300">
+            <img 
+            
+            data-aos="fade-down"
               style={{
                 width: 128,
                 height: 172,
@@ -159,12 +180,11 @@ const Gallery = () => {
               }}
               src={gallery_7}
             />
-          </div>
-          <div className="hover:scale-125 duration-300">
-            <img
-              data-aos="fade-down"
-              data-aos-delay="50"
-              data-aos-duration="2000"
+            </div>
+            <div className="hover:scale-125 duration-300">
+            <img 
+            
+            data-aos="fade-down"
               style={{
                 width: 128,
                 height: 192,
@@ -173,22 +193,21 @@ const Gallery = () => {
               }}
               src={gallery_8}
             />
+            </div>
           </div>
-        </div>
-        <div
-          style={{
-            flexDirection: "column",
-            justifyContent: "center",
-            alignItems: "flex-start",
-            gap: 16,
-            display: "inline-flex",
-          }}
-        >
-          <div className="hover:scale-125 duration-300">
-            <img
-              data-aos="fade-left"
-              data-aos-delay="50"
-              data-aos-duration="2000"
+          <div
+            style={{
+              flexDirection: "column",
+              justifyContent: "center",
+              alignItems: "flex-start",
+              gap: 16,
+              display: "inline-flex",
+            }}
+          >
+            <div  className="hover:scale-125 duration-300">
+            <img 
+          
+            data-aos="fade-left"
               style={{
                 width: 160,
                 height: 255,
@@ -197,12 +216,12 @@ const Gallery = () => {
               }}
               src={gallery_9}
             />
-          </div>
-          <div className="hover:scale-125 duration-300">
-            <img
-              data-aos="fade-left"
-              data-aos-delay="50"
-              data-aos-duration="2000"
+            </div>
+            <div className="hover:scale-125 duration-300">
+            <img 
+            
+            data-aos="fade-left"
+
               style={{
                 width: 128,
                 height: 165,
@@ -211,10 +230,11 @@ const Gallery = () => {
               }}
               src={gallery_10}
             />
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </Container>
   );
 };
 

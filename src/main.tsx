@@ -13,7 +13,7 @@ import AdminLayout from './layouts/AdminLayout.tsx';
 import Dashboard from './pages/dashboard/Dashboard.tsx';
 import NotFound from "../NotFound.tsx"
 import Review from './pages/review/Review.tsx';
-import Event from './pages/event/Event.tsx';
+import Event from './pages/event/RecentEvent.tsx';
 import Service from './pages/service/Service.tsx';
 
 
