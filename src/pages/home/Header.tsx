@@ -8,7 +8,50 @@ import amber from '../../assets/icon_amber.png'
 import blue from '../../assets/Icons_blue.png'
 import star from '../../assets/Star.png'
 import softstar2 from '../../assets/Soft_Star_2.png'
+import { motion } from "framer-motion";
 const Header = () => {
+  const header1={
+    initial:{
+      x:-200,
+      opacity:0,
+    },
+    animate:{
+      x:0,
+      opacity:1,
+      transition:{
+        duration:0.5,
+        delay:1
+      }
+    }
+  }
+  const header2={
+    initial:{
+      x:-200,
+      opacity:0,
+    },
+    animate:{
+      x:0,
+      opacity:1,
+      transition:{
+        duration:0.5,
+        delay:1.5
+      }
+    }
+  }
+  const header3={
+    initial:{
+      x:-200,
+      opacity:0,
+    },
+    animate:{
+      x:0,
+      opacity:1,
+      transition:{
+        duration:0.5,
+        delay:2
+      }
+    }
+  }
   return (
     <Container>
       <div>
@@ -74,7 +117,7 @@ const Header = () => {
         </div>
         <div className="pb-[100px]">
           <div className="max-w-[720px] grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:-mt-[60px] mt-[50px]  ">
-            <div className="lg:max-w-[220px] w-[300px] mx-auto ">
+            <motion.div variants={header1} initial="initial" animate="animate" className="lg:max-w-[220px] w-[300px] mx-auto ">
               <div className="px-4 py-6 bg-gradient-to-br from-white to-white rounded-[32px] border-2 border-white backdrop-blur-sm">
                 <div className="flex-col justify-start lg:items-start items-center gap-8 flex">
                   <div className="justify-start items-center inline-flex">
@@ -89,9 +132,9 @@ const Header = () => {
                   </div>
                 </div>
               </div>
-            </div>
+            </motion.div>
 
-            <div className="lg:max-w-[220px] w-[300px] mx-auto ">
+            <motion.div variants={header2} initial="initial" animate="animate" className="lg:max-w-[220px] w-[300px] mx-auto ">
               <div className="px-4 py-6 bg-gradient-to-br from-white to-white rounded-[32px] border-2 border-white backdrop-blur-sm">
                 <div className="flex-col justify-start lg:items-start items-center gap-8 flex">
                   <div className="justify-start items-center inline-flex">
@@ -107,9 +150,9 @@ const Header = () => {
                   </div>
                 </div>
               </div>
-            </div>
+            </motion.div>
 
-            <div className="lg:max-w-[220px] w-[300px] mx-auto ">
+            <motion.div variants={header3} initial="initial" animate="animate" className="lg:max-w-[220px] w-[300px] mx-auto ">
               <div className="px-4 py-6 bg-gradient-to-br from-white to-white rounded-[32px] border-2 border-white backdrop-blur-sm">
                 <div className="flex-col justify-start lg:items-start items-center gap-8 flex">
                   <div className="justify-start items-center inline-flex">
@@ -124,7 +167,7 @@ const Header = () => {
                   </div>
                 </div>
               </div>
-            </div>
+            </motion.div>
           </div>
         </div>
       </div>
