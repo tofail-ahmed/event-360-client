@@ -8,6 +8,7 @@ import Gallery from './Gallery/Gallery'
 import RecentEvent from './event/RecentEvent'
 import EventItems from './EventItems/EventItems'
 import ClientSay from './ClientSay/ClientSay'
+import Pricing from './Pricing/Pricing'
 
 const Home = () => {
   return (
@@ -19,7 +20,7 @@ const Home = () => {
         <EventItems></EventItems>
         <Gallery></Gallery>
         <RecentEvent></RecentEvent>
-        
+        <Pricing></Pricing>
       </div>
     </div>
   );
