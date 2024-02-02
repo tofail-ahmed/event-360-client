@@ -13,8 +13,10 @@ import AdminLayout from './layouts/AdminLayout.tsx';
 import Dashboard from './pages/dashboard/Dashboard.tsx';
 import NotFound from "../NotFound.tsx"
 import Review from './pages/review/Review.tsx';
-import Event from "./pages/home/event/RecentEvent.tsx";
-import Service from './pages/service/Service.tsx';
+
+import DashBoardRecentEvent from './pages/dashboard/DashBoardRecentEvent/DashBoardRecentEvent.tsx';
+import DashBoardEvents from './pages/dashboard/DashBoardEvents/DashBoardEvents.tsx';
+import DashBoardService from './pages/dashboard/DashBoardService/DashBoardService.tsx';
 
 
 const router = createBrowserRouter([
@@ -56,7 +58,7 @@ const router = createBrowserRouter([
       },
       {
         path:"service",
-        element:<Service></Service>
+        element:<DashBoardService></DashBoardService>
       },
       {
         path:'review',
@@ -64,8 +66,12 @@ const router = createBrowserRouter([
       },
       {
         path:"event",
-        element:<Event/>
-      }
+        element:<DashBoardEvents></DashBoardEvents>
+      },
+      {
+        path:"recentEvent",
+        element:<DashBoardRecentEvent></DashBoardRecentEvent>
+      },
     ]
   },
  
