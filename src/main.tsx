@@ -17,7 +17,8 @@ import Review from './pages/review/Review.tsx';
 import DashBoardRecentEvent from './pages/dashboard/DashBoardRecentEvent/DashBoardRecentEvent.tsx';
 import DashBoardEvents from './pages/dashboard/DashBoardEvents/DashBoardEvents.tsx';
 import DashBoardService from './pages/dashboard/DashBoardService/DashBoardService.tsx';
-
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+const queryClient = new QueryClient()
 
 const router = createBrowserRouter([
   {
@@ -82,6 +83,8 @@ const router = createBrowserRouter([
 ]);
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
+    <QueryClientProvider client={queryClient}>
     <RouterProvider router={router} />
+    </QueryClientProvider>
   </React.StrictMode>,
 )
