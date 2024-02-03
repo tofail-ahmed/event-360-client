@@ -1,16 +1,17 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
+import { cn } from '../lib/utils'
 
 const SideBar = () => {
   return (
-    <div>
-      <nav className='flex flex-col gap-4'>
-            <button className='px-4 py-2 bg-blue-600 hover:bg-blue-800/10 text-white rounded-sm mx-auto truncate max-w-md'><NavLink to={"/"}>Home</NavLink></button>
-            <button className='px-4 py-2 bg-blue-600 hover:bg-blue-800/10 text-white rounded-sm mx-auto truncate max-w-md'><NavLink to={"/admin/service"}>Services</NavLink></button>
-            <button className='px-4 py-2 bg-blue-600 hover:bg-blue-800/10 text-white rounded-sm mx-auto truncate max-w-md'><NavLink to={"/admin/addservice"}>Add Services</NavLink></button>
-            <button className='px-4 py-2 bg-blue-600 hover:bg-blue-800/10 text-white rounded-sm mx-auto truncate max-w-md'><NavLink to={"/admin/event"}>Events</NavLink></button>
-            <button className='px-4 py-2 bg-blue-600 hover:bg-blue-800/10 text-white rounded-sm mx-auto truncate max-w-md'><NavLink to={"/admin/recentEvent"}>Recent Events</NavLink></button>
-            <button className='px-4 py-2 bg-blue-600 hover:bg-blue-800/10 text-white rounded-sm mx-auto truncate max-w-md'><NavLink to={"/admin/review"}>Reviews</NavLink></button>
+    <div className="bg-green-600 col-span-2 h-screen sticky top-0 left-0 overflow-auto ">
+      <nav className="flex flex-col gap-4 mt-4 mx-2">
+            <NavLink className={({isActive})=>cn("p-3 bg-gray-400 rounded-md   transition-all flex items-center gap-2",{"bg-gray-800 text-white":isActive})}  to={"/"}>Home</NavLink>
+            <NavLink className={({isActive})=>cn("p-3 bg-gray-400 rounded-md   transition-all flex items-center gap-2",{"bg-gray-800 text-white":isActive})}  to={"/admin/service"}>Services</NavLink>
+            <NavLink className={({isActive})=>cn("p-3 bg-gray-400 rounded-md   transition-all flex items-center gap-2",{"bg-gray-800 text-white":isActive})} to={"/admin/addservice"}>Add Services</NavLink> 
+            <NavLink className={({isActive})=>cn("p-3 bg-gray-400 rounded-md   transition-all flex items-center gap-2",{"bg-gray-800 text-white":isActive})}  to={"/admin/event"}>Events</NavLink>
+            <NavLink className={({isActive})=>cn("p-3 bg-gray-400 rounded-md   transition-all flex items-center gap-2",{"bg-gray-800 text-white":isActive})} to={"/admin/recentEvent"}>Recent Events</NavLink> 
+            <NavLink className={({isActive})=>cn("p-3 bg-gray-400 rounded-md   transition-all flex items-center gap-2",{"bg-gray-800 text-white":isActive})}  to={"/admin/review"}>Reviews</NavLink>
       </nav>
     </div>
   )

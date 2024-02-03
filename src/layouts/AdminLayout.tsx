@@ -4,11 +4,11 @@ import SideBar from '../component/SideBar';
 
 const AdminLayout = () => {
   return (
-    <div className='flex'>
-      <div className='w-1/6 bg-green-400'>
+    <div className='grid grid-cols-12'>
+     
         <SideBar></SideBar>
-      </div>
-      <div className='w-5/6 bg-red-400'>
+      
+      <div className='bg-red-200/90 col-span-10 h-full px-6'>
         <Outlet />
       </div>
     </div>
