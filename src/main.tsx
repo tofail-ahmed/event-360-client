@@ -18,6 +18,7 @@ import DashBoardRecentEvent from './pages/dashboard/DashBoardRecentEvent/DashBoa
 import DashBoardEvents from './pages/dashboard/DashBoardEvents/DashBoardEvents.tsx';
 import DashBoardService from './pages/dashboard/DashBoardService/DashBoardService.tsx';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import AddService from './pages/dashboard/DashBoardService/AddService.tsx';
 const queryClient = new QueryClient()
 
 const router = createBrowserRouter([
@@ -73,6 +74,10 @@ const router = createBrowserRouter([
         path:"recentEvent",
         element:<DashBoardRecentEvent></DashBoardRecentEvent>
       },
+      {
+        path:'addservice',
+        element:<AddService></AddService>
+      }
     ]
   },
  
