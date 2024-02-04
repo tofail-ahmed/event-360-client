@@ -91,7 +91,7 @@ const Gallery = () => {
                 boxShadow: "0px 0px 4px rgba(0, 0, 0, 0.07)",
                 borderRadius: 5,
               }}
-              src={gallery_2}
+              src={gallery_1}
             />
             </div>
           </div>
@@ -116,7 +116,7 @@ const Gallery = () => {
                 boxShadow: "0px 0px 4px rgba(0, 0, 0, 0.07)",
                 borderRadius: 5,
               }}
-              src={gallery_3}
+              src={gallery_1}
             />
             </div>
             <div  className="hover:scale-125 duration-300">
@@ -129,7 +129,7 @@ const Gallery = () => {
                 boxShadow: "0px 0px 4px rgba(0, 0, 0, 0.07)",
                 borderRadius: 5,
               }}
-              src={gallery_4}
+              src={gallery_1}
             />
             </div>
             <div className="hover:scale-125 duration-300">
@@ -142,7 +142,7 @@ const Gallery = () => {
                 boxShadow: "0px 0px 4px rgba(0, 0, 0, 0.07)",
                 borderRadius: 5,
               }}
-              src={gallery_5}
+              src={gallery_1}
             />
             </div>
           </div>
@@ -165,7 +165,7 @@ const Gallery = () => {
                 boxShadow: "0px 0px 4px rgba(0, 0, 0, 0.07)",
                 borderRadius: 5,
               }}
-              src={gallery_6}
+              src={gallery_1}
             />
             </div>
             <div className="hover:scale-125 duration-300">
@@ -178,7 +178,7 @@ const Gallery = () => {
                 boxShadow: "0px 0px 4px rgba(0, 0, 0, 0.07)",
                 borderRadius: 5,
               }}
-              src={gallery_7}
+              src={gallery_1}
             />
             </div>
             <div className="hover:scale-125 duration-300">
@@ -191,7 +191,7 @@ const Gallery = () => {
                 boxShadow: "0px 0px 4px rgba(0, 0, 0, 0.07)",
                 borderRadius: 5,
               }}
-              src={gallery_8}
+              src={gallery_1}
             />
             </div>
           </div>
@@ -214,7 +214,7 @@ const Gallery = () => {
                 boxShadow: "0px 0px 4px rgba(0, 0, 0, 0.07)",
                 borderRadius: 5,
               }}
-              src={gallery_9}
+              src={gallery_1}
             />
             </div>
             <div className="hover:scale-125 duration-300">
@@ -228,7 +228,7 @@ const Gallery = () => {
                 boxShadow: "0px 0px 4px rgba(0, 0, 0, 0.07)",
                 borderRadius: 5,
               }}
-              src={gallery_10}
+              src={gallery_1}
             />
             </div>
           </div>

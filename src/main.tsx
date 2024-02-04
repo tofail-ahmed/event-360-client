@@ -19,6 +19,7 @@ import DashBoardEvents from './pages/dashboard/DashBoardEvents/DashBoardEvents.t
 import DashBoardService from './pages/dashboard/DashBoardService/DashBoardService.tsx';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import AddService from './pages/dashboard/DashBoardService/AddService.tsx';
+import UpdateService from './pages/dashboard/DashBoardService/UpdateService.tsx';
 const queryClient = new QueryClient()
 
 const router = createBrowserRouter([
@@ -77,6 +78,11 @@ const router = createBrowserRouter([
       {
         path:'addservice',
         element:<AddService></AddService>
+      },
+      {
+        path:"updateservice/:id",
+        element:<UpdateService></UpdateService>,
+        loader:({params})=>fetch(`http://localhost:5000/services/${params.id}`)
       }
     ]
   },

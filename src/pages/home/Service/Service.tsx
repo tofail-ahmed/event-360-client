@@ -47,7 +47,7 @@ const Service = () => {
         </div>
         <div className="grid lg:grid-cols-3 grid-cols-1 gap-2">
           <div
-            className="transition duration-500 mx-auto" // Add transition class for smooth effec mx-autot
+            className=" duration-500 mx-auto" 
             onMouseEnter={handleHover1}
             onMouseLeave={handleLeave1}
             onClick={handleHover1} // For touch devices

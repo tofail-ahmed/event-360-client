@@ -54,7 +54,7 @@ const RecentEvent = () => {
             drag
             dragSnapToOrigin={true}
             style={{ width: 190, height: 190, borderRadius: 26.21 }}
-            src={recent_3}
+            src={recent_1}
           />
        </div >
        <div data-aos="fade-up" data-aos-duration="1000" className="hover:scale-125">
@@ -62,7 +62,7 @@ const RecentEvent = () => {
             drag
             dragSnapToOrigin={true}
             style={{ width: 190, height: 190, borderRadius: 114 }}
-            src={recent_2}
+            src={recent_1}
           />
        </div>
          <div data-aos="fade-up" data-aos-duration="1000" className="hover:scale-125">
@@ -75,7 +75,7 @@ const RecentEvent = () => {
               background: "linear-gradient(0deg, #D9D9D9 0%, #D9D9D9 100%)",
               borderRadius: 115,
             }}
-            src={recent_5}
+            src={recent_1}
           />
          </div>
           <div data-aos="fade-up" data-aos-duration="1000" className="hover:scale-125">
@@ -83,7 +83,7 @@ const RecentEvent = () => {
             drag
             dragSnapToOrigin={true}
             style={{ width: 190, height: 190, borderRadius: 26.07 }}
-            src={recent_4}
+            src={recent_1}
           />
           </div>
           <div data-aos="fade-up" data-aos-duration="1000" className="hover:scale-125">
@@ -96,7 +96,7 @@ const RecentEvent = () => {
               background: "linear-gradient(0deg, #D9D9D9 0%, #D9D9D9 100%)",
               borderRadius: 26.21,
             }}
-            src={recent_6}
+            src={recent_1}
           />
           </div>
         </div>

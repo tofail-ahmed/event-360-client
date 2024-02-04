@@ -1,5 +1,5 @@
 import { useMutation, useQueryClient } from "@tanstack/react-query";
-import React, { FormEvent, useState } from "react";
+
 import { SubmitHandler, useForm } from "react-hook-form";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -22,11 +22,11 @@ const AddService = () => {
             "Content-Type": "application/json",
           },
         });
-        console.log("res", response);
-        console.log("data", data);
-        console.log("isSuccess", isSuccess);
-        console.log("isError", isError);
-        console.log("error", error);
+        // console.log("res", response);
+        // console.log("data", data);
+        // console.log("isSuccess", isSuccess);
+        // console.log("isError", isError);
+        // console.log("error", error);
         if (!response.ok) {
           toast.error("Service added successfully!");
           const errorText = await response.text();

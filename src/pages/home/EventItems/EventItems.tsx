@@ -17,32 +17,32 @@ const EventItems = () => {
       <div className="grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 gap-5 ">
         <div className="grid grid-rows-2 mx-auto gap-5">
           <div className="bg-white/40 p-6 rounded-md">
-            <img src={event_1} alt="" />
+            <img className="w-[280px] h-[140px]"  src={event_1} alt="" />
             <p className="font-bold">Event Item-1</p>
           </div>
           <div className="flex gap-5">
             <div className="bg-white/40 p-6 rounded-md">
-              <img src={event_2} alt="" />
+              <img className="w-[107px] h-[140px]"  src={event_1} alt="" />
               <p className="font-bold">Event Item-2</p>
             </div>
             <div className="bg-white/40 p-6 rounded-md">
-              <img src={event_3} alt="" />
+              <img className="w-[107px] h-[140px]"  src={event_1} alt="" />
               <p className="font-bold">Event Item-3</p>
             </div>
           </div>
         </div>
         <div className="mx-auto">
           <div className="bg-white/40 p-6 rounded-md mb-7">
-            <img src={event_4} alt="" />
+            <img className="w-[280px] h-[140px]" src={event_1} alt="" />
             <p className="font-bold">Event Item-4</p>
           </div>
           <div className="bg-white/40 p-6 rounded-md">
-            <img src={event_5} alt="" />
+            <img className="w-[280px] h-[140px]" src={event_1} alt="" />
             <p className="font-bold">Event Item-5</p>
           </div>
         </div>
         <div className="mx-auto bg-white/40 p-6 rounded-md">
-          <img src={event_6} alt="" />
+          <img className="w-[283px] h-[375px]" src={event_1} alt="" />
           <p className="font-bold">Event Item-6</p>
         </div>
       </div>
