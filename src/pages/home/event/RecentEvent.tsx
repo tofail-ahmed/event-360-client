@@ -36,9 +36,10 @@ const RecentEvent = () => {
   // };
 
   return (
-    <Container className="py-16">
+    <div className="mx-auto">
+      <Container className="py-16">
       <div className="flex justify-center items-center lg:flex-row flex-col">
-        <div className="mx-auto grid lg:grid-cols-3 grid-cols-2 gap-5">
+        <div className="mx-auto  grid lg:grid-cols-3 grid-cols-2 gap-5">
           <div data-aos="fade-up" data-aos-duration="1000" className="hover:scale-125">
             {" "}
             <motion.img
@@ -112,6 +113,7 @@ const RecentEvent = () => {
         </div>
       </div>
     </Container>
+    </div>
   );
 };
 

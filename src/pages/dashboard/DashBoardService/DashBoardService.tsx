@@ -1,10 +1,27 @@
-import { useQuery } from '@tanstack/react-query';
+import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
+
 import React from 'react';
 import { GrDocumentUpdate } from "react-icons/gr";
 import { RiDeleteBin5Line } from "react-icons/ri";
 
+const deleteService = async (id) => {
+  const response = await fetch(`http://localhost:5000/services/${id}`, {
+    method: 'DELETE',
+  });
+  const deleteData = await response.json();
+  console.log(deleteData)
+  return deleteData;
+};
 
 const DashBoardService = () => {
+  const queryClient = useQueryClient();
+  const { mutate: deleteServiceMutation } = useMutation({
+    mutationFn: deleteService,
+    onSuccess: () => {
+      queryClient.invalidateQueries('services');
+    },
+  });
+
   const fetchData = async () => {
     const response = await fetch('http://localhost:5000/services');
     const data = await response.json();
@@ -15,7 +32,6 @@ const DashBoardService = () => {
     queryKey: ['services'],
     queryFn: fetchData,
   });
-  // console.log(data);
 
   if (isLoading) {
     return <div>Loading...</div>;
@@ -24,13 +40,15 @@ const DashBoardService = () => {
   if (error) {
     return <div>Error: {error.message}</div>;
   }
-const handleUpdate=(id:string)=>{
-console.log(id)
-}
-const handleDelete=(id:string)=>{
-console.log(id)
-}
- 
+
+  const handleUpdate = (id) => {
+    console.log(id);
+  };
+
+  const handleDelete = (id) => {
+    deleteServiceMutation(id);
+  };
+
   return (
     <div>
       <h1>Services</h1>
@@ -42,16 +60,15 @@ console.log(id)
             <img className='w-[200px] h-[200px] rounded-full' src={service.image} alt="" />
           </div>
           <ul>
-          {service.features.split(',').map((feature, index) => (
-              <li key={index}>{index+1}. {feature.trim()}</li>
+            {service.features.split(',').map((feature, index) => (
+              <li key={index}>{index + 1}. {feature.trim()}</li>
             ))}
           </ul>
           <div className='flex gap-2'>
-          <button onClick={()=>handleUpdate(service._id)} className='bg-blue-600 text-green-400 text-md font-semibold hover:bg-blue-200 hover:text-green-600 px-2 py-1 rounded-sm flex gap-2 items-center'><span className="text-2xl border-2 border-green-400 rounded-full p-1 text-green-400"><GrDocumentUpdate /></span>Update Service</button>
-          <button onClick={()=>handleDelete(service._id)} className='bg-blue-600 text-red-400 text-md font-semibold hover:bg-blue-200 px-2 py-1 rounded-sm flex gap-2 items-center'><span className="text-2xl border-2 border-red-400 rounded-full p-1 text-red-400"><RiDeleteBin5Line /></span>Delete Service</button>
+            <button onClick={() => handleUpdate(service._id)} className='bg-blue-600 text-green-400 text-md font-semibold hover:bg-blue-200 hover:text-green-600 px-2 py-1 rounded-sm flex gap-2 items-center'><span className="text-2xl border-2 border-green-400 rounded-full p-1 text-green-400"><GrDocumentUpdate /></span>Update Service</button>
+            <button onClick={() => handleDelete(service._id)} className='bg-blue-600 text-red-400 text-md font-semibold hover:bg-blue-200 px-2 py-1 rounded-sm flex gap-2 items-center'><span className="text-2xl border-2 border-red-400 rounded-full p-1 text-red-400"><RiDeleteBin5Line /></span>Delete Service</button>
+          </div>
         </div>
-        </div>
-        
       ))}
     </div>
   );

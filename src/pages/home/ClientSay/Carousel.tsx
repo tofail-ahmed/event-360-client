@@ -24,7 +24,7 @@ const Carousel = () => {
 
   return (
     <Container>
-      <div className='max-w-[1200px] mx-auto lg:p-2  roun carouselBg'>
+      <div className='max-w-full mx-auto   rounded-md carouselBg'>
         <Swiper
           effect={'coverflow'}
           grabCursor={true}
