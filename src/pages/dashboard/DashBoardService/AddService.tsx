@@ -12,7 +12,7 @@ interface FormData {
 
 const AddService = () => {
   const queryClient = useQueryClient();
-  const { mutateAsync, isError, isSuccess, error } = useMutation({
+  const { mutateAsync } = useMutation({
     mutationFn: async (data: FormData) => {
       try {
         const response = await fetch("http://localhost:5000/service", {
@@ -22,11 +22,7 @@ const AddService = () => {
             "Content-Type": "application/json",
           },
         });
-        // console.log("res", response);
-        // console.log("data", data);
-        // console.log("isSuccess", isSuccess);
-        // console.log("isError", isError);
-        // console.log("error", error);
+        
         if (!response.ok) {
           toast.error("Service added successfully!");
           const errorText = await response.text();
@@ -61,16 +57,20 @@ const AddService = () => {
   };
   return (
     <div>
+      <h1 className="text-center text-4xl font-bold my-12">Add Service</h1>
+      <div className="flex justify-center ">
       <ToastContainer />
-      <form onSubmit={handleSubmit(onSubmit)}>
+      <form className="bg-purple-600/20 p-12" onSubmit={handleSubmit(onSubmit)}>
         <div className="w-[70%] max-w-md">
           <label
-            className="block text-red-600 font-bold rounded-s-md"
+            className="block text-black font-bold rounded-s-md"
             htmlFor="service"
           >
             Service Name
           </label>
           <input
+           className="w-[250px] p-2 rounded-md"
+         
             type="text"
             id="service"
             placeholder="Service"
@@ -84,12 +84,13 @@ const AddService = () => {
         </div>
         <div className="w-[70%] max-w-md">
           <label
-            className="block text-red-600 font-bold rounded-s-md"
+            className="block text-black font-bold rounded-s-md"
             htmlFor="description"
           >
             Description
           </label>
           <input
+           className="w-[250px] p-2 rounded-md"
             type="text"
             id="description"
             placeholder="Description"
@@ -105,17 +106,20 @@ const AddService = () => {
         </div>
         <div className="w-[70%] max-w-md">
           <label
-            className="block text-red-600 font-bold rounded-s-md"
+            className="block text-black font-bold rounded-s-md"
             htmlFor="features"
           >
             Features
+            
           </label>
-          <input
-            type="text"
+          <textarea
+           className="w-[250px] p-2 rounded-md"
+            
             id="features"
             placeholder="Features"
             {...register("features", { required: "Features is required" })}
           />
+          <p className="text-xs font-bold text-green-600">N.B:Use comma(,) after each feature. Max five <br></br>features Recommended</p>
           {formState.errors.features && (
             <span className="text-red-900 font-semibold">
               {formState.errors.features.message}
@@ -124,12 +128,13 @@ const AddService = () => {
         </div>
         <div className="w-[70%] max-w-md">
           <label
-            className="block text-red-600 font-bold rounded-s-md"
+            className="block text-black font-bold rounded-s-md"
             htmlFor="image"
           >
             Image URL
           </label>
           <input
+           className="w-[250px] p-2 rounded-md"
             type="text"
             id="image"
             placeholder="Image URL"
@@ -141,8 +146,9 @@ const AddService = () => {
             </span>
           )}
         </div>
-        <button type="submit">Submit</button>
+        <button className="bg-green-600 hover:bg-green-400 text-white font-semibold py-1 px-2" type="submit">Submit</button>
       </form>
+    </div>
     </div>
   );
 };
