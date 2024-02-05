@@ -6,47 +6,59 @@ import ServiceCardHover from "./ServiceCardHover";
 import { useQuery } from "@tanstack/react-query";
 
 const Service = () => {
-  const [isHovered1, setIsHovered1] = useState(false);
-  const [isHovered2, setIsHovered2] = useState(false);
-  const [isHovered3, setIsHovered3] = useState(false);
+  // const [isHovered1, setIsHovered1] = useState(false);
+  // const [isHovered2, setIsHovered2] = useState(false);
+  // const [isHovered3, setIsHovered3] = useState(false);
+  const [isHovered, setIsHovered] = useState<boolean[]>([]);
+  // const handleHover = (idx) => {
+  //   setIsHovered((prevHovered) => {
+  //     const temp = [...prevHovered];
+  //     temp[idx] = true;
+  //     return temp;
+  //   });
+  // };
 
-  const handleHover1 = () => {
-    setIsHovered1(true);
+  // const handleLeave = (idx) => {
+  //   setIsHovered((prevHovered) => {
+  //     const temp = [...prevHovered];
+  //     temp[idx] = false;
+  //     return temp;
+  //   });
+  // };
+
+  const handleHover = (idx, mouse) => {
+    // setIsHovered((prehovered)=>{
+    //   const temp=[...prehovered];
+    //   temp[idx]=!isHovered[idx];
+    //   return temp;
+    // })
+    if (mouse === 1) {
+      setIsHovered((prevHovered) => {
+        const temp = [...prevHovered];
+        temp[idx] = true;
+        return temp;
+      });
+    } else {
+      setIsHovered((prevHovered) => {
+        const temp = [...prevHovered];
+        temp[idx] = false;
+        return temp;
+      });
+    }
   };
-
-  const handleLeave1 = () => {
-    setIsHovered1(false);
-  };
-
-  const handleHover2 = () => {
-    setIsHovered2(true);
-  };
-
-  const handleLeave2 = () => {
-    setIsHovered2(false);
-  };
-
-  const handleHover3 = () => {
-    setIsHovered3(true);
-  };
-
-  const handleLeave3 = () => {
-    setIsHovered3(false);
-  };
-
   const fetchData = async () => {
-    const response = await fetch('http://localhost:5000/services');
+    const response = await fetch("http://localhost:5000/services");
     const data = await response.json();
-    console.log(data[0])
-    return data;
+    const firstThree = data?.slice(0, 3);
+
+    return firstThree;
   };
 
   const { data, error, isLoading } = useQuery({
-    queryKey: ['services'],
+    queryKey: ["services"],
     queryFn: fetchData,
   });
-
-
+  // console.log(data);
 
   return (
     <div className="serviceBg">
@@ -61,42 +73,24 @@ const Service = () => {
           </p>
         </div>
         <div className="grid lg:grid-cols-3 grid-cols-1 gap-2">
-          <div
-            className=" duration-500 mx-auto" 
-            onMouseEnter={handleHover1}
-            onMouseLeave={handleLeave1}
-            onClick={handleHover1} // For touch devices
-          >
-            {isHovered1 ? (
-              <ServiceCardHover data={data && data[0]}></ServiceCardHover>
-            ) : (
-              <ServiceCard data={data && data[0]}></ServiceCard>
-            )}
-          </div>
-          <div
-            className="transition duration-500 mx-auto"
-            onMouseEnter={handleHover2}
-            onMouseLeave={handleLeave2}
-            onClick={handleHover2} // For touch devices
-          >
-            {isHovered2 ? (
-              <ServiceCardHover data={data &&  data[1] }></ServiceCardHover>
-            ) : (
-              <ServiceCard data={data &&  data[1] }></ServiceCard>
-            )}
-          </div>
-          <div
-            className="transition duration-500 mx-auto"
-            onMouseEnter={handleHover3}
-            onMouseLeave={handleLeave3}
-            onClick={handleHover3} // For touch devices
-          >
-            {isHovered3 ? (
-              <ServiceCardHover data={data &&  data[2] }></ServiceCardHover>
-            ) : (
-              <ServiceCard data={data &&  data[2] }></ServiceCard>
-            )}
-          </div>
+          {data?.map((datum, idx) => (
+            <div
+              key={idx}
+              className=" duration-500 mx-auto"
+              onMouseEnter={() => handleHover(idx, 1)}
+              onMouseLeave={() => handleHover(idx, 0)}
+
+              // onClick={handleHover1} // For touch devices
+            >
+              {isHovered[idx] ? (
+                <ServiceCardHover data={datum}></ServiceCardHover>
+              ) : (
+                <ServiceCard data={datum}></ServiceCard>
+              )}
+            </div>
+          ))}
+
+          
         </div>
       </Container>
     </div>
