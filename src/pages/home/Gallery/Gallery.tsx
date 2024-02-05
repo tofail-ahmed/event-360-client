@@ -17,7 +17,7 @@ import check from "../../../assets/fi_check.png";
 const Gallery = () => {
   AOS.init();
   return (
-    <Container className="flex justify-between items-center lg:flex-row flex-col-reverse py-16">
+    <Container className="flex justify-between items-center lg:flex-row flex-col py-16">
       <div>
         <div className="lg:text-start text-center">
           <h1 className="galleryHead mb-9">Gallery</h1>
