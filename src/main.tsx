@@ -20,77 +20,92 @@ import DashBoardService from './pages/dashboard/DashBoardService/DashBoardServic
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import AddService from './pages/dashboard/DashBoardService/AddService.tsx';
 import UpdateService from './pages/dashboard/DashBoardService/UpdateService.tsx';
+import DashBoardReviews from "./pages/dashboard/DashBoardReviews/DashBoardReviews.tsx";
+import AddReviews from "./pages/dashboard/DashBoardReviews/AddReviews.tsx";
+import AddDashBoardEvents from "./pages/dashboard/DashBoardEvents/AddDashBoardEvents.tsx";
+import AddRecentEvents from './pages/dashboard/DashBoardRecentEvent/AddRecentEvents.tsx';
 const queryClient = new QueryClient()
 
 const router = createBrowserRouter([
   {
-    path:'/',
-    element:<MainLayout></MainLayout>,
-    children:[
+    path: "/",
+    element: <MainLayout></MainLayout>,
+    children: [
       {
-        index:true,
-        element:<Home></Home>
+        index: true,
+        element: <Home></Home>,
       },
       {
-        path:"about",
-        element:<About></About>,
-       
+        path: "about",
+        element: <About></About>,
       },
       {
-        path:'blog',
-        element:<Blog></Blog>
+        path: "blog",
+        element: <Blog></Blog>,
       },
       {
-        path:"contact",
-        element:<Contact></Contact>
-      }
+        path: "contact",
+        element: <Contact></Contact>,
+      },
+    ],
+  },
+  {
+    path: "/admin",
+    element: <AdminLayout></AdminLayout>,
+    children: [
+      {
+        index: true,
+        element: <Navigate to={"/admin/dashboard"} />,
+      },
+      {
+        path: "dashboard",
+        element: <Dashboard></Dashboard>,
+      },
+      {
+        path: "service",
+        element: <DashBoardService></DashBoardService>,
+      },
+      {
+        path: "addservice",
+        element: <AddService></AddService>,
+      },
+      {
+        path: "updateservice/:id",
+        element: <UpdateService></UpdateService>,
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/services/${params.id}`),
+      },
+      {
+        path: "review",
+        element: <DashBoardReviews></DashBoardReviews>,
+      },
+      {
+        path: "addreview",
+        element: <AddReviews></AddReviews>,
+      },
+      {
+        path: "event",
+        element: <DashBoardEvents></DashBoardEvents>,
+      },
+      {
+        path: "addevent",
+        element: <AddDashBoardEvents></AddDashBoardEvents>,
+      },
+      {
+        path: "recentEvent",
+        element: <DashBoardRecentEvent></DashBoardRecentEvent>,
+      },
+      {
+        path: "addrecentevent",
+        element: <AddRecentEvents></AddRecentEvents>,
+      },
+    ],
+  },
 
-    ]
-  },
   {
-    path:'/admin',
-    element:<AdminLayout></AdminLayout>,
-    children:[
-      {
-        index:true,
-        element:<Navigate to={"/admin/dashboard"}/>
-      },
-      {
-        path:"dashboard",
-        element:<Dashboard></Dashboard>
-      },
-      {
-        path:"service",
-        element:<DashBoardService></DashBoardService>
-      },
-      {
-        path:'review',
-        element:<Review />
-      },
-      {
-        path:"event",
-        element:<DashBoardEvents></DashBoardEvents>
-      },
-      {
-        path:"recentEvent",
-        element:<DashBoardRecentEvent></DashBoardRecentEvent>
-      },
-      {
-        path:'addservice',
-        element:<AddService></AddService>
-      },
-      {
-        path:"updateservice/:id",
-        element:<UpdateService></UpdateService>,
-        loader:({params})=>fetch(`http://localhost:5000/services/${params.id}`)
-      }
-    ]
+    path: "*",
+    element: <NotFound />,
   },
- 
-  {
-    path: '*',
-    element: <NotFound />
-  } 
 ]);
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>

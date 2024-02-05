@@ -3,6 +3,7 @@ import Container from "../../../component/Container";
 import "./Service.css";
 import ServiceCard from "./ServiceCard";
 import ServiceCardHover from "./ServiceCardHover";
+import { useQuery } from "@tanstack/react-query";
 
 const Service = () => {
   const [isHovered1, setIsHovered1] = useState(false);
@@ -33,6 +34,20 @@ const Service = () => {
     setIsHovered3(false);
   };
 
+  const fetchData = async () => {
+    const response = await fetch('http://localhost:5000/services');
+    const data = await response.json();
+    console.log(data[0])
+    return data;
+  };
+
+  const { data, error, isLoading } = useQuery({
+    queryKey: ['services'],
+    queryFn: fetchData,
+  });
+
+
+
   return (
     <div className="serviceBg">
       <Container className="">
@@ -53,9 +68,9 @@ const Service = () => {
             onClick={handleHover1} // For touch devices
           >
             {isHovered1 ? (
-              <ServiceCardHover></ServiceCardHover>
+              <ServiceCardHover data={data && data[0]}></ServiceCardHover>
             ) : (
-              <ServiceCard></ServiceCard>
+              <ServiceCard data={data && data[0]}></ServiceCard>
             )}
           </div>
           <div
@@ -65,9 +80,9 @@ const Service = () => {
             onClick={handleHover2} // For touch devices
           >
             {isHovered2 ? (
-              <ServiceCardHover></ServiceCardHover>
+              <ServiceCardHover data={data &&  data[1] }></ServiceCardHover>
             ) : (
-              <ServiceCard></ServiceCard>
+              <ServiceCard data={data &&  data[1] }></ServiceCard>
             )}
           </div>
           <div
@@ -77,9 +92,9 @@ const Service = () => {
             onClick={handleHover3} // For touch devices
           >
             {isHovered3 ? (
-              <ServiceCardHover></ServiceCardHover>
+              <ServiceCardHover data={data &&  data[2] }></ServiceCardHover>
             ) : (
-              <ServiceCard></ServiceCard>
+              <ServiceCard data={data &&  data[2] }></ServiceCard>
             )}
           </div>
         </div>

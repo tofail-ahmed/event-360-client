@@ -11,7 +11,7 @@ const AdminLayout = () => {
       <SideBar></SideBar>
      
       
-      <div className=' adminBg col-span-10 h-full px-6'>
+      <div className=' adminBg col-span-10 h-full px-6 '>
         <Outlet />
       </div>
     </div>
