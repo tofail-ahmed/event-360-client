@@ -1,17 +1,24 @@
 import React from "react";
-import { FaBorderAll, FaArrowRight, FaCheck, FaCodepen, FaHive, FaRocket } from "react-icons/fa";
-const PricingCard = () => {
+import {
+  FaBorderAll,
+  FaArrowRight,
+  FaCheck,
+  FaCodepen,
+  FaHive,
+  FaRocket,
+} from "react-icons/fa";
+const PricingCardOrange = () => {
   return (
-    <div className=" bg-white p-5 rounded-md border-t-4  border-[#df4e9d] lg:mx-0 mx-14 ">
-      <div className="flex justify-between items-center text-4xl font-bold text-[#df4e9d]">
-        <div className="bg-[#df4e9e49] p-4 rounded-md mb-5 text-md rotate-0">
-        {/* <FaCodepen /> */}
-        {/* <FaHive /> */}
-        <FaRocket />
+    <div className=" bg-white/40 p-5 rounded-md border-t-4  border-[#e76215] lg:mx-0 mx-14 ">
+      <div className="flex justify-between items-center text-4xl font-bold text-[#df704e]">
+        <div className="bg-[#df834e49] p-4 rounded-md mb-5 text-md rotate-0">
+          {/* <FaCodepen /> */}
+          {/* <FaHive /> */}
+          <FaRocket />
         </div>
         <p>$21</p>
       </div>
-     
+
       <div className="mt-5">
         <h1 className="text-xl font-bold my-5">Standard</h1>
         <p className="mb-5">
@@ -24,44 +31,51 @@ const PricingCard = () => {
       </div>
       <hr />
       <div className="mt-8">
-        <div className="flex items-center gap-2 my-2 line-through opacity-50">
-          
-          <span className="text-green-600 text-sm bg-green-400/50 p-2 rounded-[50%]">
-            <FaCheck />
-          </span>
-          <p>User Dashboard</p>
-        </div>
-        <s className="flex items-center gap-2 my-2">
-          
-          <span className="text-green-600 text-sm bg-green-400/50 p-2 rounded-[50%]">
-            <FaCheck />
-          </span>
-          <p>User Dashboard</p>
-        </s>
-        <div className="flex items-center gap-2 my-2">
-          
+        <div className="flex items-center gap-2 my-2 ">
           <span className="text-green-600 text-sm bg-green-400/50 p-2 rounded-[50%]">
             <FaCheck />
           </span>
           <p>User Dashboard</p>
         </div>
         <div className="flex items-center gap-2 my-2">
-          
           <span className="text-green-600 text-sm bg-green-400/50 p-2 rounded-[50%]">
             <FaCheck />
           </span>
-          <p>User Dashboard</p>
+          <p>Post 3 Ads per week</p>
         </div>
         <div className="flex items-center gap-2 my-2">
-          
           <span className="text-green-600 text-sm bg-green-400/50 p-2 rounded-[50%]">
             <FaCheck />
           </span>
-          <p>User Dashboard</p>
+          <p>Multiple images & videos</p>
+        </div>
+        <div className="flex items-center gap-2 my-2">
+          <span className="text-green-600 text-sm bg-green-400/50 p-2 rounded-[50%]">
+            <FaCheck />
+          </span>
+          <p>Basic customer support</p>
+        </div>
+        <div className="flex items-center gap-2 my-2">
+          <span className="text-green-600 text-sm bg-green-400/50 p-2 rounded-[50%]">
+            <FaCheck />
+          </span>
+          <p>Featured ads </p>
+        </div>
+        <div className="flex items-center gap-2 my-2">
+          <span className="text-green-600 text-sm bg-green-400/50 p-2 rounded-[50%]">
+            <FaCheck />
+          </span>
+          <p>Special ads badges</p>
+        </div>
+        <div className="flex items-center gap-2 my-2">
+          <span className="text-green-600 text-sm bg-green-400/50 p-2 rounded-[50%]">
+            <FaCheck />
+          </span>
+          <p>Call to Action in Every Ads</p>
         </div>
       </div>
     </div>
   );
 };
 
-export default PricingCard;
+export default PricingCardOrange;

@@ -1,5 +1,5 @@
 import React from 'react'
-import { NavLink } from "react-router-dom";
+
 const ClientSayCard = ({ image, name, designation, review }) => {
   return (
     <div className="hover:bg-blue-500 bg-slate-600 text-white rounded-md">

@@ -20,29 +20,34 @@ const UpdateService = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const response = await fetch(`http://localhost:5000/services/${id}`);
+      const response = await fetch(
+        `https://event360-server-phi.vercel.app/services/${id}`
+      );
       const data = await response.json();
       setService(data.service);
       setDescription(data.description);
       setFeatures(data.features);
       setImage(data.image);
-      console.log(data)
+      console.log(data);
     };
 
     fetchData();
   }, [id]);
- 
+
   const updateService = async (id, updatedData) => {
-    const response = await fetch(`http://localhost:5000/services/${id}`, {
-      method: "PUT",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(updatedData),
-    });
-  
+    const response = await fetch(
+      `https://event360-server-phi.vercel.app/services/${id}`,
+      {
+        method: "PUT",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(updatedData),
+      }
+    );
+
     if (!response.ok) {
       throw new Error("something went wrong");
     }
-  
+
     return response.json();
   };
  

@@ -6,7 +6,9 @@ import './EventItems.css'
 import { useQuery } from "@tanstack/react-query";
 const EventItems = () => {
   const fetchData=async()=>{
-    const res=await fetch(`http://localhost:5000/eventItems`);
+    const res = await fetch(
+      `https://event360-server-phi.vercel.app/eventItems`
+    );
     const data=await res.json();
     return data;
   }

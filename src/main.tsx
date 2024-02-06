@@ -73,7 +73,7 @@ const router = createBrowserRouter([
         path: "updateservice/:id",
         element: <UpdateService></UpdateService>,
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/services/${params.id}`),
+          fetch(`https://event360-server-phi.vercel.app/services/${params.id}`),
       },
       {
         path: "review",

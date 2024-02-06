@@ -47,7 +47,9 @@ const Service = () => {
     }
   };
   const fetchData = async () => {
-    const response = await fetch("http://localhost:5000/services");
+    const response = await fetch(
+      "https://event360-server-phi.vercel.app/services"
+    );
     const data = await response.json();
     const firstThree = data?.slice(0, 3);
 

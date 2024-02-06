@@ -7,9 +7,12 @@ import { NavLink } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 
 const deletereview = async (id) => {
-  const response = await fetch(`http://localhost:5000/reviews/${id}`, {
-    method: "DELETE",
-  });
+  const response = await fetch(
+    `https://event360-server-phi.vercel.app/reviews/${id}`,
+    {
+      method: "DELETE",
+    }
+  );
   const deleteData = await response.json();
 
   if (deleteData.deletedCount) {
@@ -27,7 +30,9 @@ const DashBoardReviews = () => {
   });
 
   const fetchData = async () => {
-    const response = await fetch("http://localhost:5000/reviews");
+    const response = await fetch(
+      "https://event360-server-phi.vercel.app/reviews"
+    );
     const data = await response.json();
     return data;
   };
@@ -55,7 +60,9 @@ const DashBoardReviews = () => {
 
   return (
     <div className="">
-      <h1 className="text-4xl text-center font-extrabold my-12">Client Review</h1>
+      <h1 className="text-4xl text-center font-extrabold my-12">
+        Client Review
+      </h1>
       <ToastContainer />
 
       {data.map((review) => (

@@ -1,16 +1,7 @@
 import React from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import gallery_1 from "../../../assets/gallery/picture_1.png";
-import gallery_2 from "../../../assets/gallery/picture_2.png";
-import gallery_3 from "../../../assets/gallery/picture_3.png";
-import gallery_4 from "../../../assets/gallery/picture_4.png";
-import gallery_5 from "../../../assets/gallery/picture_5.png";
-import gallery_6 from "../../../assets/gallery/picture_6.png";
-import gallery_7 from "../../../assets/gallery/picture_7.png";
-import gallery_8 from "../../../assets/gallery/picture_8.png";
-import gallery_9 from "../../../assets/gallery/picture_9.png";
-import gallery_10 from "../../../assets/gallery/picture_10.png";
+
 import Container from "../../../component/Container";
 import "./Gallery.css";
 import check from "../../../assets/fi_check.png";
@@ -18,7 +9,9 @@ import { useQuery } from "@tanstack/react-query";
 const Gallery = () => {
   AOS.init();
   const fetchData = async () => {
-    const response = await fetch("http://localhost:5000/galleries");
+    const response = await fetch(
+      "https://event360-server-phi.vercel.app/galleries"
+    );
     const data = await response.json();
     return data;
   };

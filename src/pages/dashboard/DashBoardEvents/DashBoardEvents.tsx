@@ -7,9 +7,12 @@ import { ToastContainer, toast } from "react-toastify";
 
 const DashBoardEvents = () => {
   const deleteEvent = async (id) => {
-    const res = await fetch(`http://localhost:5000/eventItems/${id}`, {
-      method: "DELETE",
-    });
+    const res = await fetch(
+      `https://event360-server-phi.vercel.app/eventItems/${id}`,
+      {
+        method: "DELETE",
+      }
+    );
     const deleteData = await res.json();
     if (deleteData.deletedCount) {
       toast.success("Event Deleted Succesfully");
@@ -28,7 +31,9 @@ const DashBoardEvents = () => {
     deleteeventMutation(id);
   };
   const fetchData = async () => {
-    const res = await fetch(`http://localhost:5000/eventItems`);
+    const res = await fetch(
+      `https://event360-server-phi.vercel.app/eventItems`
+    );
     const data = await res.json();
     return data;
   };

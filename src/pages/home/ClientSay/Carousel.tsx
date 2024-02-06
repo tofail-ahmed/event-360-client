@@ -13,7 +13,9 @@ const Carousel = () => {
   
  
   const fetchData = async () => {
-    const response = await fetch("http://localhost:5000/reviews");
+    const response = await fetch(
+      "https://event360-server-phi.vercel.app/reviews"
+    );
     const data = await response.json();
     return data;
   };

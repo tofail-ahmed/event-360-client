@@ -32,7 +32,9 @@ const RecentEvent = () => {
   //   animate: { opacity: 1, y: 0 }
   // };
   const fetchData = async () => {
-    const response = await fetch("http://localhost:5000/recents");
+    const response = await fetch(
+      "https://event360-server-phi.vercel.app/recents"
+    );
     const data = await response.json();
     return data;
   };
