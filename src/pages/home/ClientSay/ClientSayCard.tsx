@@ -1,20 +1,23 @@
 import React from 'react'
 import { NavLink } from "react-router-dom";
-const ClientSayCard = ({ img }) => {
+const ClientSayCard = ({ image, name, designation, review }) => {
   return (
-    <div className="hover:bg-blue-500/10">
-      <img
-        className="w-[400px] h-[200px] hover:bg-red-600/50"
-        src={img}
-        alt=""
-      />
-      <div className='flex justify-center'>
-        <NavLink
-          to={"/admin/dashboard"}
-          className="bg-blue-600 hover:bg-blue-800 text-white px-8 py-2 rounded-md mx-auto"
-        >
-          Click
-        </NavLink>
+    <div className="hover:bg-blue-500 bg-slate-600 text-white rounded-md">
+      <div className="p-2 flex flex-col gap-20">
+        <div className="flex items-center gap-8">
+          <img
+            className="w-[50px] h-[100px] rounded-[50%]"
+            src={image}
+            alt=""
+          />
+          <div>
+            <h1 className="text-xl font-bold">{name}</h1>
+            <h1 className="text-md font-semibold">{designation}</h1>
+          </div>
+        </div>
+        <div>
+          <p>{review.slice(0, 150)}</p>
+        </div>
       </div>
     </div>
   );

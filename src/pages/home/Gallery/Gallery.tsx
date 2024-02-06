@@ -14,8 +14,27 @@ import gallery_10 from "../../../assets/gallery/picture_10.png";
 import Container from "../../../component/Container";
 import "./Gallery.css";
 import check from "../../../assets/fi_check.png";
+import { useQuery } from "@tanstack/react-query";
 const Gallery = () => {
   AOS.init();
+  const fetchData = async () => {
+    const response = await fetch("http://localhost:5000/galleries");
+    const data = await response.json();
+    return data;
+  };
+
+  const { data, error, isLoading } = useQuery({
+    queryKey: ["galleries"],
+    queryFn: fetchData,
+  });
+
+  if (isLoading) {
+    return <div>Loading...</div>;
+  }
+
+  if (error) {
+    return <div>Error: {error.message}</div>;
+  }
   return (
     <Container className="flex justify-between items-center lg:flex-row flex-col py-16">
       <div>
@@ -78,7 +97,7 @@ const Gallery = () => {
                 boxShadow: "0px 0px 4px rgba(0, 0, 0, 0.07)",
                 borderRadius: 5,
               }}
-              src={gallery_1}
+              src={data[11].image}
             />
             </div>
             <div className="hover:scale-125 duration-300">
@@ -91,7 +110,7 @@ const Gallery = () => {
                 boxShadow: "0px 0px 4px rgba(0, 0, 0, 0.07)",
                 borderRadius: 5,
               }}
-              src={gallery_1}
+              src={data[10].image}
             />
             </div>
           </div>
@@ -116,7 +135,7 @@ const Gallery = () => {
                 boxShadow: "0px 0px 4px rgba(0, 0, 0, 0.07)",
                 borderRadius: 5,
               }}
-              src={gallery_1}
+              src={data[9].image}
             />
             </div>
             <div  className="hover:scale-125 duration-300">
@@ -129,7 +148,7 @@ const Gallery = () => {
                 boxShadow: "0px 0px 4px rgba(0, 0, 0, 0.07)",
                 borderRadius: 5,
               }}
-              src={gallery_1}
+              src={data[8].image}
             />
             </div>
             <div className="hover:scale-125 duration-300">
@@ -142,7 +161,7 @@ const Gallery = () => {
                 boxShadow: "0px 0px 4px rgba(0, 0, 0, 0.07)",
                 borderRadius: 5,
               }}
-              src={gallery_1}
+              src={data[7].image}
             />
             </div>
           </div>
@@ -165,7 +184,7 @@ const Gallery = () => {
                 boxShadow: "0px 0px 4px rgba(0, 0, 0, 0.07)",
                 borderRadius: 5,
               }}
-              src={gallery_1}
+              src={data[6].image}
             />
             </div>
             <div className="hover:scale-125 duration-300">
@@ -178,7 +197,7 @@ const Gallery = () => {
                 boxShadow: "0px 0px 4px rgba(0, 0, 0, 0.07)",
                 borderRadius: 5,
               }}
-              src={gallery_1}
+              src={data[5].image}
             />
             </div>
             <div className="hover:scale-125 duration-300">
@@ -191,7 +210,7 @@ const Gallery = () => {
                 boxShadow: "0px 0px 4px rgba(0, 0, 0, 0.07)",
                 borderRadius: 5,
               }}
-              src={gallery_1}
+              src={data[4].image}
             />
             </div>
           </div>
@@ -214,7 +233,7 @@ const Gallery = () => {
                 boxShadow: "0px 0px 4px rgba(0, 0, 0, 0.07)",
                 borderRadius: 5,
               }}
-              src={gallery_1}
+              src={data[3].image}
             />
             </div>
             <div className="hover:scale-125 duration-300">
@@ -228,7 +247,7 @@ const Gallery = () => {
                 boxShadow: "0px 0px 4px rgba(0, 0, 0, 0.07)",
                 borderRadius: 5,
               }}
-              src={gallery_1}
+              src={data[2].image}
             />
             </div>
           </div>

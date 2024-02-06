@@ -1,14 +1,11 @@
 import Container from "../../../component/Container";
 import "./RecentEvent.css";
 import recent_1 from "../../../assets/recent_event/recent_1.png";
-import recent_2 from "../../../assets/recent_event/recent_2.png";
-import recent_3 from "../../../assets/recent_event/recent_3.png";
-import recent_4 from "../../../assets/recent_event/recent_4.png";
-import recent_5 from "../../../assets/recent_event/recent_5.png";
-import recent_6 from "../../../assets/recent_event/recent_6.png";
+
 import { motion } from "framer-motion";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import { useQuery } from "@tanstack/react-query";
 
 const RecentEvent = () => {
   AOS.init();
@@ -34,7 +31,24 @@ const RecentEvent = () => {
   //   initial: { opacity: 0, y: -50 },
   //   animate: { opacity: 1, y: 0 }
   // };
+  const fetchData = async () => {
+    const response = await fetch("http://localhost:5000/recents");
+    const data = await response.json();
+    return data;
+  };
 
+  const { data, error, isLoading } = useQuery({
+    queryKey: ["recents"],
+    queryFn: fetchData,
+  });
+
+  if (isLoading) {
+    return <div>Loading...</div>;
+  }
+
+  if (error) {
+    return <div>Error: {error.message}</div>;
+  }
   return (
     <div className="mx-auto">
       <Container className="py-16">
@@ -46,7 +60,7 @@ const RecentEvent = () => {
               drag
               dragSnapToOrigin={true}
               style={{ width: 190, height: 190, borderRadius: 26.34 }}
-              src={recent_1}
+              src={data[0].image}
             />
           </div>{" "}
           <div data-aos="fade-up" data-aos-duration="1000" className="hover:scale-125">
@@ -54,7 +68,7 @@ const RecentEvent = () => {
             drag
             dragSnapToOrigin={true}
             style={{ width: 190, height: 190, borderRadius: 26.21 }}
-            src={recent_1}
+            src={data[1].image}
           />
        </div >
        <div data-aos="fade-up" data-aos-duration="1000" className="hover:scale-125">
@@ -62,7 +76,7 @@ const RecentEvent = () => {
             drag
             dragSnapToOrigin={true}
             style={{ width: 190, height: 190, borderRadius: 114 }}
-            src={recent_1}
+            src={data[2].image}
           />
        </div>
          <div data-aos="fade-up" data-aos-duration="1000" className="hover:scale-125">
@@ -75,7 +89,7 @@ const RecentEvent = () => {
               background: "linear-gradient(0deg, #D9D9D9 0%, #D9D9D9 100%)",
               borderRadius: 115,
             }}
-            src={recent_1}
+            src={data[3].image}
           />
          </div>
           <div data-aos="fade-up" data-aos-duration="1000" className="hover:scale-125">
@@ -83,7 +97,7 @@ const RecentEvent = () => {
             drag
             dragSnapToOrigin={true}
             style={{ width: 190, height: 190, borderRadius: 26.07 }}
-            src={recent_1}
+            src={data[4].image}
           />
           </div>
           <div data-aos="fade-up" data-aos-duration="1000" className="hover:scale-125">
@@ -96,7 +110,7 @@ const RecentEvent = () => {
               background: "linear-gradient(0deg, #D9D9D9 0%, #D9D9D9 100%)",
               borderRadius: 26.21,
             }}
-            src={recent_1}
+            src={data[5].image}
           />
           </div>
         </div>

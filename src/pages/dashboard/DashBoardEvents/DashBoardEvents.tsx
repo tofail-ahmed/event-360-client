@@ -76,7 +76,7 @@ const DashBoardEvents = () => {
                   <GrDocumentUpdate />
                 </span>
                 <NavLink to={`/admin/updateservice/${event._id}`}>
-                  Update Service
+                  Update Event
                 </NavLink>
               </button>
               <button
@@ -86,7 +86,7 @@ const DashBoardEvents = () => {
                 <span className="text-2xl border-2 border-red-400 rounded-full p-1 text-red-400">
                   <RiDeleteBin5Line />
                 </span>
-                Delete Service
+                Delete Event
               </button>
             </div>
           </div>

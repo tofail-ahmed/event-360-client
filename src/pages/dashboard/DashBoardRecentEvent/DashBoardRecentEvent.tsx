@@ -73,8 +73,8 @@ const DashBoardRecentEvent = () => {
             ))}
           </ul>
           <div className='flex gap-2 my-2'>
-            <button  className='  bg-green-600 text-green-400 text-md font-semibold hover:bg-blue-200 hover:text-green-600 px-2 py-1 rounded-sm flex gap-2 items-center duration-500'><span className="text-2xl border-2 border-green-400 rounded-full p-1 text-green-400"><GrDocumentUpdate /></span><NavLink to={`/admin/updateservice/${recent._id}`}>Update Service</NavLink></button>
-            <button onClick={() => handleDelete(recent._id)} className='bg-red-600 text-red-400 text-md font-semibold hover:bg-blue-200 px-2 py-1 rounded-sm flex gap-2 items-center duration-500'><span className="text-2xl border-2 border-red-400 rounded-full p-1 text-red-400"><RiDeleteBin5Line /></span>Delete Service</button>
+            <button  className='  bg-green-600 text-green-400 text-md font-semibold hover:bg-blue-200 hover:text-green-600 px-2 py-1 rounded-sm flex gap-2 items-center duration-500'><span className="text-2xl border-2 border-green-400 rounded-full p-1 text-green-400"><GrDocumentUpdate /></span><NavLink to={`/admin/updateservice/${recent._id}`}>Update Event</NavLink></button>
+            <button onClick={() => handleDelete(recent._id)} className='bg-red-600 text-red-400 text-md font-semibold hover:bg-blue-200 px-2 py-1 rounded-sm flex gap-2 items-center duration-500'><span className="text-2xl border-2 border-red-400 rounded-full p-1 text-red-400"><RiDeleteBin5Line /></span>Delete Event</button>
           </div>
          </div>
           

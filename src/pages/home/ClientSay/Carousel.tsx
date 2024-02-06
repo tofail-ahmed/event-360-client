@@ -7,29 +7,41 @@ import 'swiper/css/pagination';
 import './Carousel.css';
 import { EffectCoverflow, Pagination } from 'swiper/modules';
 import ClientSayCard from './ClientSayCard';
+import { useQuery } from "@tanstack/react-query";
 
 const Carousel = () => {
-  const array = [
-    '/src/assets/gallery/Picture_1.png',
-    '/src/assets/gallery/Picture_2.png',
-    '/src/assets/gallery/Picture_3.png',
-    '/src/assets/gallery/Picture_4.png',
-    '/src/assets/gallery/Picture_5.png',
-    '/src/assets/gallery/Picture_6.png',
-    '/src/assets/gallery/Picture_7.png',
-    '/src/assets/gallery/Picture_8.png',
-    '/src/assets/gallery/Picture_9.png',
-    '/src/assets/gallery/Picture_10.png',
-  ];
+  
+ 
+  const fetchData = async () => {
+    const response = await fetch("http://localhost:5000/reviews");
+    const data = await response.json();
+    return data;
+  };
+
+  const { data, error, isLoading } = useQuery({
+    queryKey: ["reviews"],
+    queryFn: fetchData,
+  });
+
+  if (isLoading) {
+    return <div>Loading...</div>;
+  }
+
+  if (error) {
+    return <div>Error: {error.message}</div>;
+  }
 
   return (
     <Container>
-      <div className='max-w-full mx-auto   rounded-md carouselBg'>
+      <div className="max-w-full mx-auto   rounded-md carouselBg">
+        <h1 className="text-6xl font-[800] text-center py-6">
+          What our client say about us
+        </h1>
         <Swiper
-          effect={'coverflow'}
+          effect={"coverflow"}
           grabCursor={true}
           centeredSlides={true}
-          slidesPerView={'auto'}
+          slidesPerView={"auto"}
           coverflowEffect={{
             rotate: 50,
             stretch: 0,
@@ -43,12 +55,17 @@ const Carousel = () => {
           modules={[EffectCoverflow, Pagination]}
           className="mySwiper"
         >
-          <div >
-          {array.map((item, idx) => (
-            <SwiperSlide key={idx}>
-              <ClientSayCard img={item}></ClientSayCard>
-            </SwiperSlide>
-          ))}
+          <div className=" border-2 border-red-500">
+            {data.map((item) => (
+              <SwiperSlide key={item._id}>
+                <ClientSayCard
+                  image={item.image}
+                  name={item.name}
+                  designation={item.designation}
+                  review={item.review}
+                ></ClientSayCard>
+              </SwiperSlide>
+            ))}
           </div>
         </Swiper>
       </div>

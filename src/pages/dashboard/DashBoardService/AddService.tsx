@@ -146,7 +146,7 @@ const AddService = () => {
             </span>
           )}
         </div>
-        <button className="bg-green-600 hover:bg-green-400 text-white font-semibold py-1 px-2" type="submit">Submit</button>
+        <button className="bg-green-600 hover:bg-green-400 text-white font-semibold py-1 px-2 rounded-md my-4" type="submit">Submit</button>
       </form>
     </div>
     </div>

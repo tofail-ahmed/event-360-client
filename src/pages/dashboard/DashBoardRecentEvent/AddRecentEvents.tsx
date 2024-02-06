@@ -30,7 +30,6 @@ const AddRecentEvents = () => {
             `HTTP error! Status: ${response.status}, Message: ${errorText}`
           );
         } else {
-          alert("Event added succesfully");
           toast.success("Event added successfully!");
         }
         return response.json();
@@ -119,7 +118,8 @@ const AddRecentEvents = () => {
           placeholder="Features"
           {...register("features", { required: "Features is required" })}
         />
-        <p className="text-xs font-bold text-green-600">N.B:Use comma(,) after each feature. Max five <br></br>features Recommended</p>
+                <p className="text-xs font-bold text-green-600">N.B:Use comma(,) after each feature. Max five <br></br>features Recommended</p>
+
         {formState.errors.features && (
           <span className="text-red-900 font-semibold">
             {formState.errors.features.message}
@@ -146,7 +146,7 @@ const AddRecentEvents = () => {
           </span>
         )}
       </div>
-      <button className="bg-green-600 hover:bg-green-400 text-white font-semibold py-1 px-2" type="submit">Submit</button>
+      <button className="bg-green-600 hover:bg-green-400 text-white font-semibold py-1 px-2 rounded-md my-4" type="submit">Submit</button>
     </form>
   </div>
   </div>
