@@ -11,6 +11,7 @@ import ClientSay from './ClientSay/ClientSay'
 import Pricing from './Pricing/Pricing'
 import Footer from './Footer/Footer'
 import Booking from './Booking/Booking'
+import Team from './Team/Team'
 
 const Home = () => {
   return (
@@ -24,6 +25,7 @@ const Home = () => {
         <ClientSay></ClientSay>
         <RecentEvent></RecentEvent>
         <Pricing></Pricing>
+        <Team></Team>
         <Booking></Booking>
         <Footer></Footer>
       </div>

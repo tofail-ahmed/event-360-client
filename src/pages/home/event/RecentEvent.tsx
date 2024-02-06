@@ -6,6 +6,7 @@ import { motion } from "framer-motion";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { useQuery } from "@tanstack/react-query";
+import Loader from "../../../component/Loader";
 
 const RecentEvent = () => {
   AOS.init();
@@ -45,7 +46,7 @@ const RecentEvent = () => {
   });
 
   if (isLoading) {
-    return <div>Loading...</div>;
+    return <Loader></Loader>;
   }
 
   if (error) {

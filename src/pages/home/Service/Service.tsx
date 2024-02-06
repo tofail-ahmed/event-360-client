@@ -4,6 +4,7 @@ import "./Service.css";
 import ServiceCard from "./ServiceCard";
 import ServiceCardHover from "./ServiceCardHover";
 import { useQuery } from "@tanstack/react-query";
+import Loader from "../../../component/Loader";
 
 const Service = () => {
   // const [isHovered1, setIsHovered1] = useState(false);
@@ -56,11 +57,13 @@ const Service = () => {
     return firstThree;
   };
 
-  const { data, error, isLoading } = useQuery({
+  const { data, isLoading } = useQuery({
     queryKey: ["services"],
     queryFn: fetchData,
   });
-  // console.log(data);
+  if(isLoading){
+    return <Loader></Loader>;
+  }
 
   return (
     <div className="serviceBg">

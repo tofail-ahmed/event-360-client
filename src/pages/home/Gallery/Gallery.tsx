@@ -6,6 +6,7 @@ import Container from "../../../component/Container";
 import "./Gallery.css";
 import check from "../../../assets/fi_check.png";
 import { useQuery } from "@tanstack/react-query";
+import Loader from "../../../component/Loader";
 const Gallery = () => {
   AOS.init();
   const fetchData = async () => {
@@ -22,7 +23,7 @@ const Gallery = () => {
   });
 
   if (isLoading) {
-    return <div>Loading...</div>;
+    return <Loader></Loader>;
   }
 
   if (error) {

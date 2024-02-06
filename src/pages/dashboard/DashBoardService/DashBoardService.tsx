@@ -5,6 +5,7 @@ import { GrDocumentUpdate } from "react-icons/gr";
 import { RiDeleteBin5Line } from "react-icons/ri";
 import { NavLink } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
+import Loader from '../../../component/Loader';
 
 const deleteService = async (id) => {
   const response = await fetch(
@@ -41,9 +42,9 @@ const DashBoardService = () => {
     queryKey: ["services"],
     queryFn: fetchData,
   });
-  console.log(data);
+  // console.log(data);
   if (isLoading) {
-    return <div>Loading...</div>;
+    return <Loader></Loader>;
   }
 
   if (error) {

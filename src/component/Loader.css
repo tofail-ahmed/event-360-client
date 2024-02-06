@@ -1,0 +1,200 @@
+.loading {
+     margin-top: 30%;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      animation: loaderRotate 3s  infinite ;
+      animation-timing-function: ease-in-out;
+    }
+    /* @keyframes loaderRotate {
+     
+        0%{
+          transform: rotate(0);
+        }
+        100%{
+          transform: rotate(180deg);
+        }
+      
+    } */
+    
+    .loading div {
+      position: absolute;
+    }
+    
+    .glass {
+      width: 100px;
+      height: 100px;
+      background-color: rgb(255, 52, 1);
+      border-radius: 20% 50%;
+      z-index: 3;
+      backdrop-filter: blur(5px);
+     animation: glassRotation 1s   infinite  ;
+    }
+    
+    @keyframes glassRotation {
+      0%{
+        transform: rotate(0);
+      }
+      100%{
+        transform: rotate(180deg);
+      }
+    }
+    
+    
+    
+    .box-1,.box-2,.box-3,.box-4 ,.box-5,.box-6,.box-7,.box-8{
+      width: 50px;
+      height: 50px;
+      background-color: rgb(255, 52, 1);
+      border-radius: 50%;
+      
+      animation-duration: 3s;
+      transform: translate(-0,-0);
+     
+      
+      animation-iteration-count: infinite;
+      
+      animation-timing-function: ease-in-out;
+      z-index: 3;
+    }
+    .box-1{
+      animation-name: circular-1;
+    }
+    .box-2{
+      animation-name: circular-2;
+    } 
+    .box-3{
+      animation-name: circular-3;
+    } 
+     .box-4{
+      animation-name: circular-4;
+    } 
+     .box-5{
+      animation-name: circular-5;
+    } 
+     .box-6{
+      animation-name: circular-6;
+    } 
+     .box-7{
+      animation-name: circular-7;
+    } 
+     .box-8{
+      animation-name: circular-8;
+    } 
+    @keyframes circular-1 {
+      0% {
+        transform: translate(-150px,-150px);
+        z-index: 1;
+      }
+     
+      50% {
+        transform: translate(150px,150px);
+      }
+      100% {
+        transform: translate(-150px,-150px);
+        z-index: 6;
+      }
+    }
+    @keyframes circular-5 {
+      0% {
+        transform: translate(150px,150px);
+        z-index: 1;
+      }
+     
+      50% {
+        transform: translate(-150px,-150px);
+      }
+      100% {
+        transform: translate(150px,150px);
+        z-index: 6;
+      }
+    }
+    @keyframes circular-2 {
+      0% {
+        transform: translate(-150px,150px);
+        z-index: 1;
+      }
+     
+      50% {
+        transform: translate(150px,-150px);
+      }
+      100% {
+        transform: translate(-150px,150px);
+        z-index: 6;
+      }
+    }
+    @keyframes circular-6 {
+      0% {
+        transform: translate(150px,-150px);
+    
+        z-index: 1;
+      }
+     
+      50% {
+        transform: translate(-150px,150px);
+    
+      }
+      100% {
+        transform: translate(150px,-150px);
+    
+        z-index: 6;
+      }
+    }
+    @keyframes circular-3 {
+      0% {
+        transform: translate(-200px);
+        z-index: 1;
+      }
+     
+      50% {
+        transform: translate(200px);
+      }
+      100% {
+        transform: translate(-200px);
+        z-index: 6;
+      }
+    }
+    @keyframes circular-7 {
+      0% {
+        transform: translate(200px);
+        z-index: 1;
+      }
+     
+      50% {
+        transform: translate(-200px);
+      }
+      100% {
+        transform: translate(200px);
+        z-index: 6;
+      }
+    }
+    @keyframes circular-4 {
+      0% {
+        transform: translateY(-200px);
+        z-index: 1;
+      }
+     
+      50% {
+        transform: translateY(200px);
+      }
+      100% {
+        transform: translateY(-200px);
+        z-index: 6;
+      }
+    }
+    @keyframes circular-8 {
+      0% {
+        transform: translateY(200px);
+        z-index: 1;
+      }
+     
+      50% {
+        transform: translateY(-200px);
+      }
+      100% {
+        transform: translateY(200px);
+        z-index: 6;
+      }
+    }  
+    

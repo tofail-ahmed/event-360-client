@@ -1,9 +1,10 @@
 import React from "react";
 import Container from "../../../component/Container";
-import event_1 from "../../../assets/event_1.png";
+
 
 import './EventItems.css'
 import { useQuery } from "@tanstack/react-query";
+import Loader from "../../../component/Loader";
 const EventItems = () => {
   const fetchData=async()=>{
     const res = await fetch(
@@ -17,7 +18,7 @@ const EventItems = () => {
     queryFn:fetchData
   })
   if (isLoading) {
-    return <div>Loading...</div>;
+    return <Loader></Loader>;
   }
   
   if (error) {

@@ -8,6 +8,7 @@ import './Carousel.css';
 import { EffectCoverflow, Pagination } from 'swiper/modules';
 import ClientSayCard from './ClientSayCard';
 import { useQuery } from "@tanstack/react-query";
+import Loader from '../../../component/Loader';
 
 const Carousel = () => {
   
@@ -26,7 +27,7 @@ const Carousel = () => {
   });
 
   if (isLoading) {
-    return <div>Loading...</div>;
+    return <Loader></Loader>;
   }
 
   if (error) {
