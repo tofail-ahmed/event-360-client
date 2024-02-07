@@ -43,37 +43,44 @@ const Header = () => {
   return (
     <Container>
       <div>
-       <div className="">
-       <div className="flex justify-between items-center py-[24px] ">
-          <h1 className="font-[700] text-[32px]">
-            <span>Event</span> <span className="text-[#3461FF]">360</span>
-          </h1>
-          <nav className="flex gap-[16px]">
-            <button className="font-[500] text-[16px] px-[8px] py-[12px]">
-              {" "}
-              <NavLink to={"/"}>Home</NavLink>
-            </button>
-            <button className="font-[500] text-[16px] px-[8px] py-[12px]">
-              {" "}
-              <NavLink to={"/admin/dashboard"}>Dashboard</NavLink>
-            </button>
-            <button className="font-[500] text-[16px] px-[8px] py-[12px]">
-              <NavLink to={"/about"}>About</NavLink>
-            </button>
-            <button className="font-[500] text-[16px] px-[8px] py-[12px]">
-              <NavLink to={"/contact"}>Contat</NavLink>
-            </button>
-          </nav>
+        <div className="">
+          <div className="flex justify-between items-center py-[24px] lg:px-2 px-6 ">
+            <h1 className="font-[700] text-[32px]">
+              <span>Event</span> <span className="text-[#3461FF]">360</span>
+            </h1>
+            <nav className="flex gap-[16px]">
+              <button className="font-[500] text-[16px] px-[8px] py-[12px]">
+                {" "}
+                <NavLink to={"/"}>Home</NavLink>
+              </button>
+              <button className="font-[500] text-[16px] px-[8px] py-[12px]">
+                {" "}
+                <NavLink to={"/admin/dashboard"}>Dashboard</NavLink>
+              </button>
+            </nav>
+          </div>
         </div>
-       </div>
-        <div className="flex lg:flex-row flex-col justify-between items-center ">
-          <motion.div variants={parent} initial="initial" animate="animate" className="flex flex-col text-center lg:text-start">
-            <motion.h1 variants={parent} className="brand_new_packages mb-[8px]">
+        <div className="flex lg:flex-row flex-col justify-between items-center lg:px-6 px-12 ">
+          <motion.div
+            variants={parent}
+            initial="initial"
+            animate="animate"
+            className="flex flex-col text-center lg:text-start"
+          >
+            <motion.h1
+              variants={parent}
+              className="brand_new_packages mb-[8px]"
+            >
               Brand New <br />
               event Packages
             </motion.h1>
-            <motion.h1 variants={parent} className="winter">For Winter</motion.h1>
-            <motion.h3 variants={parent} className="lg:max-w-[70ch] w-full my-[32px]">
+            <motion.h1 variants={parent} className="winter">
+              For Winter
+            </motion.h1>
+            <motion.h3
+              variants={parent}
+              className="lg:max-w-[70ch] w-full my-[32px]"
+            >
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi
               provident sequi iusto rem, et est impedit tenetur perspiciatis
               fugiat repellendus necessitatibus laudantium quos harum doloribus
@@ -93,27 +100,37 @@ const Header = () => {
             <div className="absolute top-14 left-8">
               <img src={star} alt="" />
             </div>
-           <div>
-           <img
-              className="rounded-[800px] mx-auto p-[50px] border-[1px] border-black mt-[20px]"
-              src={seminar}
-              alt=""
-            />
-           </div>
-           <div className="absolute bottom-5 right-1">
+            <div>
+              <img
+                className="rounded-[800px] mx-auto p-[50px] border-[1px] border-black mt-[20px]"
+                src={seminar}
+                alt=""
+              />
+            </div>
+            <div className="absolute bottom-5 right-1">
               <img src={softstar2} alt="" />
             </div>
           </div>
         </div>
-        <div className="pb-[100px]">
-          <motion.div variants={header} initial="initial" animate="animate"  className="max-w-[720px] grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:-mt-[60px] mt-[50px]  ">
-            <motion.div variants={header} className="lg:max-w-[220px] w-[300px] mx-auto ">
+        <div className="pb-[100px] lg:px-6 px-12">
+          <motion.div
+            variants={header}
+            initial="initial"
+            animate="animate"
+            className="max-w-[720px] grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:-mt-[60px] mt-[50px]  "
+          >
+            <motion.div
+              variants={header}
+              className="lg:max-w-[220px] w-[300px] mx-auto "
+            >
               <div className="px-4 py-6 bg-gradient-to-br from-white to-white rounded-[32px] border-2 border-white backdrop-blur-sm">
                 <div className="flex-col justify-start lg:items-start items-center gap-8 flex">
                   <div className="justify-start items-center inline-flex">
                     <div className="w-12 h-12 relative">
                       <div className="w-12 h-12 left-0 top-0 absolute bg-indigo-500 bg-opacity-30 rounded-full" />
-                      <div className="w-6 h-6 left-[12px] top-[12px] absolute"><img src={indigo} alt="" /></div>
+                      <div className="w-6 h-6 left-[12px] top-[12px] absolute">
+                        <img src={indigo} alt="" />
+                      </div>
                     </div>
                   </div>
                   <div className="w-48 text-zinc-800 text-base font-light font-['Lato'] leading-snug">
@@ -124,14 +141,18 @@ const Header = () => {
               </div>
             </motion.div>
 
-            <motion.div variants={header}  className="lg:max-w-[220px] w-[300px] mx-auto ">
+            <motion.div
+              variants={header}
+              className="lg:max-w-[220px] w-[300px] mx-auto "
+            >
               <div className="px-4 py-6 bg-gradient-to-br from-white to-white rounded-[32px] border-2 border-white backdrop-blur-sm">
                 <div className="flex-col justify-start lg:items-start items-center gap-8 flex">
                   <div className="justify-start items-center inline-flex">
                     <div className="w-12 h-12 relative">
                       <div className="w-12 h-12 left-0 top-0 absolute bg-amber-300 bg-opacity-30 rounded-full" />
-                      <div className="w-6 h-6 left-[12px] top-[12px] absolute"><img src={amber} alt="" /></div>
-                      
+                      <div className="w-6 h-6 left-[12px] top-[12px] absolute">
+                        <img src={amber} alt="" />
+                      </div>
                     </div>
                   </div>
                   <div className="w-48 text-zinc-800 text-base font-light font-['Lato'] leading-snug">
@@ -142,13 +163,18 @@ const Header = () => {
               </div>
             </motion.div>
 
-            <motion.div variants={header}  className="lg:max-w-[220px] w-[300px] mx-auto ">
+            <motion.div
+              variants={header}
+              className="lg:max-w-[220px] w-[300px] mx-auto "
+            >
               <div className="px-4 py-6 bg-gradient-to-br from-white to-white rounded-[32px] border-2 border-white backdrop-blur-sm">
                 <div className="flex-col justify-start lg:items-start items-center gap-8 flex">
                   <div className="justify-start items-center inline-flex">
                     <div className="w-12 h-12 relative">
                       <div className="w-12 h-12 left-0 top-0 absolute bg-blue-300 bg-opacity-30 rounded-full" />
-                      <div className="w-6 h-6 left-[12px] top-[12px] absolute"><img src={blue} alt="" /></div>
+                      <div className="w-6 h-6 left-[12px] top-[12px] absolute">
+                        <img src={blue} alt="" />
+                      </div>
                     </div>
                   </div>
                   <div className="w-48 text-zinc-800 text-base font-light font-['Lato'] leading-snug">

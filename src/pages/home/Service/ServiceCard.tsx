@@ -11,8 +11,8 @@ interface ServiceData {
 const ServiceCard: React.FC<{ data: ServiceData }> = ({ data }) => {
   console.log("data from card", data);
   return (
-    <div className="w-[410px] h-[560px] bg-slate-500/10 p-7 rounded-md">
-      <img src={data?.image} alt="" />
+    <div className="w-[400px] h-[560px] bg-slate-500/10 p-7 rounded-md">
+      <img className='lg:w-350px] w-[300px] mx-auto'  src={data?.image} alt="" />
       <h1 className='serviceCardHead mt-6 mb-3'>{data?.service}</h1>
       <ul>
         {data?.features?.split(',').map((feature, index) => (

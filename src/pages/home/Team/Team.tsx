@@ -93,7 +93,7 @@ const Team = () => {
   return (
     <Container>
       <div>
-        <h1 className="text-5xl font-extrabold text-center my-6">
+        <h1 className="text-5xl font-extrabold text-center my-6 lg:mx-6 mx-12">
           Meet our Dynamic Team{" "}
         </h1>
         <div  className="grid lg:grid-cols-4 grid-cols-2 gap-4">

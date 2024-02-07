@@ -6,7 +6,7 @@ import "aos/dist/aos.css";
 const Booking = () => {
   AOS.init();
   return (
-    <Container className="bookingBg my-12 rounded-md py-12">
+    <Container className="bookingBg my-12 rounded-md py-12 ">
       <div className=" flex lg:flex-row flex-col justify-center items-center gap-12">
         <div data-aos="fade-right"
                 data-aos-delay="500"
