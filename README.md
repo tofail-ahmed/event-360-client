@@ -59,9 +59,9 @@
 
 ## Installtion
 
-`git clone https://github.com/programming-hero-web-course1/l2-b2-assignment-5-frontend-tofail-ahmed`
-`cd event360`
-`npm install`
-`npm run dev`
+- `git clone https://github.com/programming-hero-web-course1/l2-b2-assignment-5-frontend-tofail-ahmed`
+- `cd event360`
+- `npm install`
+- `npm run dev`
 
 
