@@ -1,13 +1,19 @@
-import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
+import { InvalidateQueryFilters, useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import React from "react";
 import { GrDocumentUpdate } from "react-icons/gr";
 import { RiDeleteBin5Line } from "react-icons/ri";
 import { NavLink } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import Loader from "../../../component/Loader";
-
+interface Event {
+  _id: string;
+  eventItem: string;
+  description: string;
+  features: string;
+  image: string;
+}
 const DashBoardEvents = () => {
-  const deleteEvent = async (id) => {
+  const deleteEvent = async (id:string) => {
     const res = await fetch(
       `https://event360-server-phi.vercel.app/eventItems/${id}`,
       {
@@ -25,10 +31,10 @@ const DashBoardEvents = () => {
   const { mutate: deleteeventMutation } = useMutation({
     mutationFn: deleteEvent,
     onSuccess: () => {
-      queryClient.invalidateQueries("eventItems");
+      queryClient.invalidateQueries("eventItems" as InvalidateQueryFilters);
     },
   });
-  const handleDelete = (id) => {
+  const handleDelete = (id:string) => {
     deleteeventMutation(id);
   };
   const fetchData = async () => {
@@ -54,7 +60,7 @@ const DashBoardEvents = () => {
       <h1 className="text-4xl text-center font-extrabold">Our Event Items</h1>
       <ToastContainer />
 
-      {data.map((event) => (
+      {data.map((event:Event) => (
         <div
           className="bg-green-400/20 p-2  flex mx-[20px] lg:flex-row flex-col-reverse gap-8 my-4"
           key={event._id}
@@ -81,7 +87,7 @@ const DashBoardEvents = () => {
                 <span className="text-2xl border-2 border-green-400 rounded-full p-1 text-green-400">
                   <GrDocumentUpdate />
                 </span>
-                <NavLink to={`/admin/updateservice/${event._id}`}>
+                <NavLink to={`/admin/eventItems/${event._id}`}>
                   Update Event
                 </NavLink>
               </button>

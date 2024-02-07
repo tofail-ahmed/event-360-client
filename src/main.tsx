@@ -24,6 +24,9 @@ import DashBoardReviews from "./pages/dashboard/DashBoardReviews/DashBoardReview
 import AddReviews from "./pages/dashboard/DashBoardReviews/AddReviews.tsx";
 import AddDashBoardEvents from "./pages/dashboard/DashBoardEvents/AddDashBoardEvents.tsx";
 import AddRecentEvents from './pages/dashboard/DashBoardRecentEvent/AddRecentEvents.tsx';
+import UpdateReviews from "./pages/dashboard/DashBoardReviews/UpdateReviews.tsx";
+import EventItems from './pages/home/EventItems/EventItems.tsx';
+import UpdateDashBoardEvents from './pages/dashboard/DashBoardEvents/UpdateDashBoardEvents.tsx';
 const queryClient = new QueryClient()
 
 const router = createBrowserRouter([
@@ -79,6 +82,7 @@ const router = createBrowserRouter([
         path: "review",
         element: <DashBoardReviews></DashBoardReviews>,
       },
+
       {
         path: "addreview",
         element: <AddReviews></AddReviews>,
@@ -92,12 +96,23 @@ const router = createBrowserRouter([
         element: <AddDashBoardEvents></AddDashBoardEvents>,
       },
       {
+        path: "eventItems/:id",
+        element: <UpdateDashBoardEvents></UpdateDashBoardEvents>,
+        loader: ({ params }) =>
+          fetch(`https://event360-server-phi.vercel.app/eventItems/${params.id}`),
+      },
+      {
         path: "recentEvent",
         element: <DashBoardRecentEvent></DashBoardRecentEvent>,
       },
       {
         path: "addrecentevent",
         element: <AddRecentEvents></AddRecentEvents>,
+      },
+      {
+        path: "updateservice/:id",
+        element: <UpdateService></UpdateService>,
+       
       },
     ],
   },

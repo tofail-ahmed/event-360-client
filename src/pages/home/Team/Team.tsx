@@ -12,6 +12,7 @@ import { BsLinkedin } from "react-icons/bs";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { FaInstagramSquare } from "react-icons/fa";
+import {motion} from "framer-motion"
 const Team = () => {
   AOS.init();
 
@@ -96,9 +97,9 @@ const Team = () => {
         <h1 className="text-5xl font-extrabold text-center my-6">
           Meet our Dynamic Team{" "}
         </h1>
-        <div className="grid lg:grid-cols-4 grid-cols-2 gap-4">
+        <div  className="grid lg:grid-cols-4 grid-cols-2 gap-4">
           {team.map((member) => (
-            <div className="bg-zinc-600/30 p-2 rounded-md ">
+            <motion.div drag dragSnapToOrigin={true}  className="bg-zinc-600/30 p-2 rounded-md ">
               <img
                 data-aos="fade-up"
                 data-aos-delay="500"
@@ -130,7 +131,7 @@ const Team = () => {
                   <FaInstagramSquare />
                 </div>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>

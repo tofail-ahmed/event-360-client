@@ -15,7 +15,7 @@ const UpdateService = () => {
   const navigate = useNavigate();
   const params = useParams();
   const id = params.id;
-  console.log(id)
+  // console.log(id)
 
 
   useEffect(() => {
