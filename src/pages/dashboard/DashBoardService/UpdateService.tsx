@@ -1,7 +1,12 @@
-import { useMutation, useQueryClient } from "@tanstack/react-query";
-import React, { useEffect, useRef, useState } from "react";
-import { useLoaderData, useNavigate, useParams } from "react-router-dom";
-
+import { InvalidateQueryFilters, UseMutationOptions, useMutation, useQueryClient } from "@tanstack/react-query";
+import React, { useEffect, useState } from "react";
+import {  useNavigate, useParams } from "react-router-dom";
+interface UpdatedData {
+  service: string;
+  description: string;
+  features: string;
+  image: string;
+}
 
 
 const UpdateService = () => {
@@ -34,7 +39,7 @@ const UpdateService = () => {
     fetchData();
   }, [id]);
 
-  const updateService = async (id, updatedData) => {
+  const updateService = async (id:string, updatedData:UpdatedData) => {
     const response = await fetch(
       `https://event360-server-phi.vercel.app/services/${id}`,
       {
@@ -54,19 +59,27 @@ const UpdateService = () => {
 
  
 
-  const { mutate: updateServiceMutate } = useMutation({
-    mutationFn: (updatedData) => updateService(id, updatedData),
-
+  type UpdateServiceOptions = UseMutationOptions<void, Error, UpdatedData, unknown> & {
+    mutationFn: (updatedData: UpdatedData) => Promise<void>;
+  };
+  
+  const { mutate: updateServiceMutate } = useMutation<void, Error, UpdatedData, unknown>({
+    mutationFn: async (updatedData: UpdatedData) => {
+      if (!id) throw new Error("ID is undefined");
+      await updateService(id, updatedData);
+      return;
+    },
     onSuccess: () => {
-      queryClient.invalidateQueries("services");
+      queryClient.invalidateQueries("services" as InvalidateQueryFilters);
       navigate("/admin/service");
     },
-  });
-
-  const handleSubmit = (event) => {
+   
+  } as UpdateServiceOptions);
+  
+  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    const updatedData = { service, description, features, image };
-    // console.log(updatedData)
+    if (!id) return; // If id is undefined, return early
+    const updatedData: UpdatedData = { service, description, features, image };
     updateServiceMutate(updatedData);
   };
 

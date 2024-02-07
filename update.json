@@ -1,0 +1,26 @@
+type UpdateServiceOptions = UseMutationOptions<void, Error, UpdatedData, unknown> & {
+      mutationFn: (updatedData: UpdatedData) => Promise<void>;
+    };
+    
+    const { mutate: updateServiceMutate } = useMutation<void, Error, UpdatedData, unknown>({
+      mutationFn: async (updatedData: UpdatedData) => {
+        if (!id) throw new Error("ID is undefined");
+        await updateService(id, updatedData);
+        return;
+      },
+     
+    } as UpdateServiceOptions);
+    
+    const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+      event.preventDefault();
+      if (!id) return; // If id is undefined, return early
+      const updatedData: UpdatedData = { service, description, features, image };
+      updateServiceMutate(updatedData);
+    };
+
+
+
+    onSuccess: () => {
+      queryClient.invalidateQueries("services" as InvalidateQueryFilters);
+      navigate("/admin/service");
+    },
