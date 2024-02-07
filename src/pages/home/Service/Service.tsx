@@ -1,11 +1,16 @@
-import React, { useState } from "react";
 import Container from "../../../component/Container";
 import "./Service.css";
 import ServiceCard from "./ServiceCard";
 import ServiceCardHover from "./ServiceCardHover";
 import { useQuery } from "@tanstack/react-query";
 import Loader from "../../../component/Loader";
-
+import { useState } from "react";
+interface IDatum {
+  service: string;
+  description: string;
+  features: string;
+  image: string;
+}
 const Service = () => {
   // const [isHovered1, setIsHovered1] = useState(false);
   // const [isHovered2, setIsHovered2] = useState(false);
@@ -27,7 +32,7 @@ const Service = () => {
   //   });
   // };
 
-  const handleHover = (idx, mouse) => {
+  const handleHover = (idx:number, mouse:number) => {
     // setIsHovered((prehovered)=>{
     //   const temp=[...prehovered];
     //   temp[idx]=!isHovered[idx];
@@ -78,7 +83,7 @@ const Service = () => {
           </p>
         </div>
         <div className="grid lg:grid-cols-3 grid-cols-1 gap-2">
-          {data?.map((datum, idx) => (
+          {data?.map((datum:IDatum, idx:number) => (
             <div
               key={idx}
               className=" duration-500 mx-auto"

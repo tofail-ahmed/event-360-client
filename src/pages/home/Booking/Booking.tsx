@@ -1,4 +1,3 @@
-import React from "react";
 import Container from "../../../component/Container";
 import './Booking.css'
 import AOS from "aos";

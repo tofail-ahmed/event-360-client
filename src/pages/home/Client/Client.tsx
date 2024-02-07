@@ -1,4 +1,3 @@
-import React from 'react'
 import './Client.css'
 import Container from '../../../component/Container'
 import spotify from '../../../assets/spotify.png'

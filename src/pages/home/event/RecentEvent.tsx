@@ -1,6 +1,5 @@
 import Container from "../../../component/Container";
 import "./RecentEvent.css";
-import recent_1 from "../../../assets/recent_event/recent_1.png";
 
 import { motion } from "framer-motion";
 import AOS from "aos";

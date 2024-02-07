@@ -1,4 +1,3 @@
-import React from 'react'
 import Navbar from './Header'
 import '../home/Home.css'
 import Client from './Client/Client'

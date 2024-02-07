@@ -1,6 +1,4 @@
-import React from 'react'
 import { FaArrowLeft } from 'react-icons/fa'
-import { FaLeftLong } from 'react-icons/fa6'
 
 const Dashboard = () => {
   return (

@@ -1,10 +1,9 @@
-import React from "react";
 import {
-  FaBorderAll,
+  
   FaArrowRight,
   FaCheck,
-  FaCodepen,
-  FaHive,
+ 
+ 
   FaRocket,
 } from "react-icons/fa";
 const PricingCardOrange = () => {

@@ -4,7 +4,7 @@ import { SubmitHandler, useForm } from "react-hook-form";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 interface FormData {
-  event: string;
+  eventItem: string;
   description: string;
   features: string;
   image: string;
@@ -76,11 +76,11 @@ const AddRecentEvents = () => {
           type="text"
           id="event"
           placeholder="Event"
-          {...register("event", { required: "event is required" })}
+          {...register("eventItem", { required: "event is required" })}
         />
-        {formState.errors.event && (
+        {formState.errors.eventItem && (
           <span className="text-red-900 font-semibold">
-            {formState.errors.event.message}
+            {formState.errors.eventItem.message}
           </span>
         )}
       </div>

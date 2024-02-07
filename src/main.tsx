@@ -12,7 +12,6 @@ import About from './pages/about/About.tsx';
 import AdminLayout from './layouts/AdminLayout.tsx';
 import Dashboard from './pages/dashboard/Dashboard.tsx';
 import NotFound from "../NotFound.tsx"
-import Review from './pages/review/Review.tsx';
 
 import DashBoardRecentEvent from './pages/dashboard/DashBoardRecentEvent/DashBoardRecentEvent.tsx';
 import DashBoardEvents from './pages/dashboard/DashBoardEvents/DashBoardEvents.tsx';
@@ -24,8 +23,6 @@ import DashBoardReviews from "./pages/dashboard/DashBoardReviews/DashBoardReview
 import AddReviews from "./pages/dashboard/DashBoardReviews/AddReviews.tsx";
 import AddDashBoardEvents from "./pages/dashboard/DashBoardEvents/AddDashBoardEvents.tsx";
 import AddRecentEvents from './pages/dashboard/DashBoardRecentEvent/AddRecentEvents.tsx';
-import UpdateReviews from "./pages/dashboard/DashBoardReviews/UpdateReviews.tsx";
-import EventItems from './pages/home/EventItems/EventItems.tsx';
 import UpdateDashBoardEvents from './pages/dashboard/DashBoardEvents/UpdateDashBoardEvents.tsx';
 const queryClient = new QueryClient()
 

@@ -1,5 +1,4 @@
-import React from "react";
-import { FaBorderAll, FaArrowRight, FaCheck, FaCodepen, FaHive, FaRocket } from "react-icons/fa";
+import {  FaArrowRight, FaCheck, FaHive } from "react-icons/fa";
 const PricingCardBlue = () => {
   return (
     <div className=" bg-white/40 p-5 rounded-md border-t-4  border-[#4e51df] lg:mx-0 mx-14 ">

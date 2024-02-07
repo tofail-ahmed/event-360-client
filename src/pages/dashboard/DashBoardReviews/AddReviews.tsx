@@ -38,12 +38,12 @@ const AddReviews = () => {
         }
         return response.json();
       } catch (error) {
-        throw new Error(`Error during mutation: ${error.message}`);
+        throw new Error(`Error during mutation`);
       }
     },
   });
 
-  const { register, handleSubmit, setError, formState, reset } =
+  const { register, handleSubmit, formState, reset } =
     useForm<FormData>();
 
   const onSubmit: SubmitHandler<FormData> = async (data) => {
@@ -55,7 +55,7 @@ const AddReviews = () => {
     } catch (error) {
       console.error(error);
       // Set error message
-      setError("global", { message: error.message });
+      // setError("global", { message: error.message });
     }
   };
   return (

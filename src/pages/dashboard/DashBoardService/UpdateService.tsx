@@ -1,6 +1,7 @@
-import { InvalidateQueryFilters, UseMutationOptions, useMutation, useQueryClient } from "@tanstack/react-query";
 import React, { useEffect, useState } from "react";
-import {  useNavigate, useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
+import { InvalidateQueryFilters, UseMutationOptions, useMutation, useQueryClient } from "@tanstack/react-query";
+
 interface UpdatedData {
   service: string;
   description: string;
@@ -8,6 +9,10 @@ interface UpdatedData {
   image: string;
 }
 
+// Define UpdateServiceOptions type globally
+type UpdateServiceOptions = UseMutationOptions<void, Error, UpdatedData, unknown> & {
+  mutationFn: (updatedData: UpdatedData) => Promise<void>;
+};
 
 const UpdateService = () => {
   const [service, setService] = useState("");
@@ -15,13 +20,10 @@ const UpdateService = () => {
   const [features, setFeatures] = useState("");
   const [image, setImage] = useState("");
 
-
   const queryClient = useQueryClient();
   const navigate = useNavigate();
   const params = useParams();
   const id = params.id;
-  // console.log(id)
-
 
   useEffect(() => {
     const fetchData = async () => {
@@ -33,13 +35,12 @@ const UpdateService = () => {
       setDescription(data.description);
       setFeatures(data.features);
       setImage(data.image);
-      console.log(data);
     };
 
     fetchData();
   }, [id]);
 
-  const updateService = async (id:string, updatedData:UpdatedData) => {
+  const updateService = async (id: string, updatedData: UpdatedData) => {
     const response = await fetch(
       `https://event360-server-phi.vercel.app/services/${id}`,
       {
@@ -55,35 +56,25 @@ const UpdateService = () => {
 
     return response.json();
   };
- 
 
- 
-
-  type UpdateServiceOptions = UseMutationOptions<void, Error, UpdatedData, unknown> & {
-    mutationFn: (updatedData: UpdatedData) => Promise<void>;
-  };
-  
   const { mutate: updateServiceMutate } = useMutation<void, Error, UpdatedData, unknown>({
     mutationFn: async (updatedData: UpdatedData) => {
       if (!id) throw new Error("ID is undefined");
       await updateService(id, updatedData);
-      return;
     },
     onSuccess: () => {
       queryClient.invalidateQueries("services" as InvalidateQueryFilters);
       navigate("/admin/service");
     },
-   
   } as UpdateServiceOptions);
-  
+
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    if (!id) return; // If id is undefined, return early
+    if (!id) return;
     const updatedData: UpdatedData = { service, description, features, image };
     updateServiceMutate(updatedData);
   };
 
-  
   return (
     <div className="flex justify-center my-16">
       <form onSubmit={handleSubmit} className="bg-slate-400/30 p-14 rounded-md">

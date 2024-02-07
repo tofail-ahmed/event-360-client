@@ -1,4 +1,3 @@
-import React from "react";
 import Container from "../../../component/Container";
 import { TbWorld } from "react-icons/tb";
 import { FaEuroSign } from "react-icons/fa";

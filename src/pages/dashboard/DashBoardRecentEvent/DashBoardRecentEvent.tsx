@@ -1,13 +1,20 @@
-import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
+import { useQuery, useMutation, useQueryClient, InvalidateQueryFilters } from '@tanstack/react-query';
 
-import React from 'react';
+
 import { GrDocumentUpdate } from "react-icons/gr";
 import { RiDeleteBin5Line } from "react-icons/ri";
 import { NavLink } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
 import Loader from '../../../component/Loader';
+interface IRecent{
+  _id:string;
+  image:string;
+  description:string;
+  eventItem:string;
+  features:string;
 
-const deleteRecentEvent = async (id) => {
+}
+const deleteRecentEvent = async (id:string) => {
   const response = await fetch(
     `https://event360-server-phi.vercel.app/recents/${id}`,
     {
@@ -26,7 +33,7 @@ const DashBoardRecentEvent = () => {
   const { mutate: deleteRecentEventMutation } = useMutation({
     mutationFn: deleteRecentEvent,
     onSuccess: () => {
-      queryClient.invalidateQueries("recents");
+      queryClient.invalidateQueries("recents" as InvalidateQueryFilters) ;
     },
   });
 
@@ -55,7 +62,7 @@ const DashBoardRecentEvent = () => {
   //   console.log(id);
   // };
 
-  const handleDelete = (id) => {
+  const handleDelete = (id:string) => {
     deleteRecentEventMutation(id);
   };
 
@@ -66,7 +73,7 @@ const DashBoardRecentEvent = () => {
       </h1>
       <ToastContainer />
 
-      {data.map((recent) => (
+      {data.map((recent:IRecent) => (
         <div
           className="bg-green-400/20 p-2  flex mx-[20px] lg:flex-row flex-col-reverse gap-8 my-4"
           key={recent._id}

@@ -1,6 +1,10 @@
-import React from 'react'
-
-const ClientSayCard = ({ image, name, designation, review }) => {
+interface IClientSayCardProps {
+  image: string;
+  name: string;
+  designation: string;
+  review: string;
+}
+const ClientSayCard = ({ image, name, designation, review }:IClientSayCardProps) => {
   return (
     <div className="hover:bg-blue-500 bg-slate-600 text-white rounded-md">
       <div className="p-2 flex flex-col gap-20">

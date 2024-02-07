@@ -1,4 +1,3 @@
-import React from 'react';
 import Container from '../../../component/Container';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
@@ -9,7 +8,13 @@ import { EffectCoverflow, Pagination } from 'swiper/modules';
 import ClientSayCard from './ClientSayCard';
 import { useQuery } from "@tanstack/react-query";
 import Loader from '../../../component/Loader';
-
+interface IReview {
+  _id: string;
+  image: string;
+  name: string;
+  designation: string;
+  review: string;
+}
 const Carousel = () => {
   
  
@@ -59,7 +64,7 @@ const Carousel = () => {
           className="mySwiper"
         >
           <div className=" border-2 border-red-500">
-            {data.map((item) => (
+            {data.map((item:IReview) => (
               <SwiperSlide key={item._id}>
                 <ClientSayCard
                   image={item.image}

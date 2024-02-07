@@ -1,4 +1,3 @@
-import React from "react";
 import FooterDown from "./FooterDown";
 import Container from "../../../component/Container";
 import { FaArrowRight } from "react-icons/fa";

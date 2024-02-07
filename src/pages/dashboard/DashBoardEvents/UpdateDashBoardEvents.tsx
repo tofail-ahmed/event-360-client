@@ -1,7 +1,12 @@
-import { useMutation, useQueryClient } from "@tanstack/react-query";
-import React, { useEffect, useRef, useState } from "react";
-import { useLoaderData, useNavigate, useParams } from "react-router-dom";
-
+import { InvalidateQueryFilters, UseMutationOptions, useMutation, useQueryClient } from "@tanstack/react-query";
+import React, { useEffect, useState } from "react";
+import {  useNavigate, useParams } from "react-router-dom";
+interface IUpdatedData {
+  eventItem: string;
+  description: string;
+  features: string;
+  image: string;
+}
 
 
 const UpdateDashBoardEvents = () => {
@@ -34,7 +39,7 @@ const UpdateDashBoardEvents = () => {
     fetchData();
   }, [id]);
 
-  const updateService = async (id, updatedData) => {
+  const updateService = async (id:string, updatedData:IUpdatedData) => {
     const response = await fetch(
       `https://event360-server-phi.vercel.app/eventItems/${id}`,
       {
@@ -51,19 +56,25 @@ const UpdateDashBoardEvents = () => {
     return response.json();
   };
  
-
+  type UpdateEventOptions = UseMutationOptions<void, Error, IUpdatedData, unknown> & {
+    mutationFn: (updatedData: IUpdatedData) => Promise<void>;
+  };
  
 
-  const { mutate: updateServiceMutate } = useMutation({
-    mutationFn: (updatedData) => updateService(id, updatedData),
-
+  const { mutate: updateServiceMutate } = useMutation<void, Error, IUpdatedData, unknown>({
+    mutationFn: async (updatedData: IUpdatedData) => {
+      if (!id) throw new Error("ID is undefined");
+      await updateService(id, updatedData);
+      return;
+    },
     onSuccess: () => {
-      queryClient.invalidateQueries("services");
+      queryClient.invalidateQueries("services" as InvalidateQueryFilters);
       navigate("/admin/event");
     },
-  });
+   
+  } as UpdateEventOptions);
 
-  const handleSubmit = (event) => {
+  const handleSubmit = (event:React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const updatedData = { eventItem, description, features, image };
     // console.log(updatedData)
