@@ -73,7 +73,7 @@ const router = createBrowserRouter([
         path: "updateservice/:id",
         element: <UpdateService></UpdateService>,
         loader: ({ params }) =>
-          fetch(`https://event360-server-phi.vercel.app/services/${params.id}`),
+          fetch(`https://event360-gold.vercel.app/services/${params.id}`),
       },
       {
         path: "review",
@@ -96,7 +96,7 @@ const router = createBrowserRouter([
         path: "eventItems/:id",
         element: <UpdateDashBoardEvents></UpdateDashBoardEvents>,
         loader: ({ params }) =>
-          fetch(`https://event360-server-phi.vercel.app/eventItems/${params.id}`),
+          fetch(`https://event360-gold.vercel.app/eventItems/${params.id}`),
       },
       {
         path: "recentEvent",
@@ -109,7 +109,6 @@ const router = createBrowserRouter([
       {
         path: "updateservice/:id",
         element: <UpdateService></UpdateService>,
-       
       },
     ],
   },

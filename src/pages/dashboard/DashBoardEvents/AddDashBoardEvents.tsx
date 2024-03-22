@@ -16,7 +16,7 @@ const AddDashBoardEvents = () => {
     mutationFn: async (data: FormData) => {
       try {
         const response = await fetch(
-          "https://event360-server-phi.vercel.app/eventItem",
+          "https://event360-gold.vercel.app/eventItem",
           {
             method: "POST",
             body: JSON.stringify(data),

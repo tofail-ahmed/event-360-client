@@ -53,9 +53,7 @@ const Service = () => {
     }
   };
   const fetchData = async () => {
-    const response = await fetch(
-      "https://event360-server-phi.vercel.app/services"
-    );
+    const response = await fetch("https://event360-gold.vercel.app/services");
     const data = await response.json();
     const firstThree = data?.slice(0, 3);
 
@@ -66,7 +64,7 @@ const Service = () => {
     queryKey: ["services"],
     queryFn: fetchData,
   });
-  if(isLoading){
+  if (isLoading) {
     return <Loader></Loader>;
   }
 
@@ -76,14 +74,15 @@ const Service = () => {
         <div className="text-center mx-auto max-w-[700px]">
           <h1 className="serviceHead mt-14 mb-3">Our Services</h1>
           <p className="serviceDescrp mb-14">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet
-            consectetur, obcaecati possimus natus asperiores porro vitae numquam
-            doloremque libero aliquam cumque nulla delectus consequuntur ut
-            harum, nostrum facilis qui perspiciatis.
+            Join Our Mission: Together, Let's Serve and Inspire Change! Our
+            service project is dedicated to uplifting communities through
+            compassion and action. Whether it's volunteering, donating, or
+            spreading awareness, every contribution matters. Together, we can
+            create a world where everyone thrives. Join us today!
           </p>
         </div>
         <div className="grid lg:grid-cols-3 grid-cols-1 gap-2">
-          {data?.map((datum:IDatum, idx:number) => (
+          {data?.map((datum: IDatum, idx: number) => (
             <div
               key={idx}
               className=" duration-500 mx-auto"
@@ -99,8 +98,6 @@ const Service = () => {
               )}
             </div>
           ))}
-
-          
         </div>
       </Container>
     </div>

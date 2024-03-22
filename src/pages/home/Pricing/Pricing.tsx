@@ -9,10 +9,7 @@ const Pricing = () => {
       <div>
         <h1 className="priceHead my-6">Explore our pricing plans</h1>
         <p className="priceDescrp lg:max-w-[1080px] max-w-[520px] mx-auto my-6">
-          Ut posuere felis arcu tellus tempus in in ultricies. Gravida id nibh
-          ornare viverra. Ultrices faucibus neque velit risus ac id lorem.Ut
-          posuere felis arcu tellus tempus in in ultricies. Gravida id nibh
-          ornare viverra. Ultrices faucibus neque velit risus ac id lorem.
+        Pricing Plans: Choose your level of impact. From basic memberships to premium packages, explore options tailored to your budget and commitment. Every plan contributes to our service initiatives, ensuring sustainable change. Join us in making a difference, one plan at a time
         </p>
 
         <div className="grid lg:grid-cols-3 gap-8 grid-cols-1 mt-24">

@@ -81,12 +81,7 @@ const Header = () => {
               variants={parent}
               className="lg:max-w-[70ch] w-full my-[32px]"
             >
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi
-              provident sequi iusto rem, et est impedit tenetur perspiciatis
-              fugiat repellendus necessitatibus laudantium quos harum doloribus
-              sit quia nostrum! Incidunt qui quis porro natus unde, tenetur
-              atque excepturi consectetur. Cumque perferendis beatae assumenda
-              sunt, in nemo facilis laborum consequuntur aut pariatur.
+              Empowering Communities Together: Join us in making a difference! Our service project aims to uplift lives through compassion and action. Together, we can create meaningful change and build a brighter future for all. Get involved today and be part of something truly impactful
             </motion.h3>
             <motion.div variants={parent}>
               <div className="w-[195px] h-[52px] px-10 py-6 bg-blue-600 justify-center items-center gap-2.5 inline-flex">
@@ -134,8 +129,7 @@ const Header = () => {
                     </div>
                   </div>
                   <div className="w-48 text-zinc-800 text-base font-light font-['Lato'] leading-snug">
-                    Lorem ipsum dolor sit amet, consectetu adipiscing elit.
-                    Cursus imperdiet sed id.
+                  "Service with Heart: Transforming lives through kindness and commitment."
                   </div>
                 </div>
               </div>
@@ -156,8 +150,7 @@ const Header = () => {
                     </div>
                   </div>
                   <div className="w-48 text-zinc-800 text-base font-light font-['Lato'] leading-snug">
-                    Lorem ipsum dolor sit amet, consectetu adipiscing elit.
-                    Cursus imperdiet sed id.
+                  "Making a Difference: Serving others, one act of kindness at a time."
                   </div>
                 </div>
               </div>
@@ -178,8 +171,11 @@ const Header = () => {
                     </div>
                   </div>
                   <div className="w-48 text-zinc-800 text-base font-light font-['Lato'] leading-snug">
-                    Lorem ipsum dolor sit amet, consectetu adipiscing elit.
-                    Cursus imperdiet sed id.
+                  "Community Care: Together, we're building a better tomorrow."
+
+
+
+
                   </div>
                 </div>
               </div>

@@ -13,9 +13,9 @@ interface IService {
   features: string;
   image: string;
 }
-const deleteService = async (id:string) => {
+const deleteService = async (id: string) => {
   const response = await fetch(
-    `https://event360-server-phi.vercel.app/services/${id}`,
+    `https://event360-gold.vercel.app/services/${id}`,
     {
       method: "DELETE",
     }
@@ -37,9 +37,7 @@ const DashBoardService = () => {
   });
 
   const fetchData = async () => {
-    const response = await fetch(
-      "https://event360-server-phi.vercel.app/services"
-    );
+    const response = await fetch("https://event360-gold.vercel.app/services");
     const data = await response.json();
     return data;
   };
@@ -61,7 +59,7 @@ const DashBoardService = () => {
   //   console.log(id);
   // };
 
-  const handleDelete = (id:string) => {
+  const handleDelete = (id: string) => {
     deleteServiceMutation(id);
   };
 
@@ -70,7 +68,7 @@ const DashBoardService = () => {
       <h1 className="text-4xl text-center font-extrabold">Our Services</h1>
       <ToastContainer />
 
-      {data.map((service:IService) => (
+      {data.map((service: IService) => (
         <div
           className="bg-green-400/20 p-2  flex mx-[20px] lg:flex-row flex-col-reverse gap-8 my-4"
           key={service._id}

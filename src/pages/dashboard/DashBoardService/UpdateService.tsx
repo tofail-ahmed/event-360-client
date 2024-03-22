@@ -28,7 +28,7 @@ const UpdateService = () => {
   useEffect(() => {
     const fetchData = async () => {
       const response = await fetch(
-        `https://event360-server-phi.vercel.app/services/${id}`
+        `https://event360-gold.vercel.app/services/${id}`
       );
       const data = await response.json();
       setService(data.service);
@@ -42,7 +42,7 @@ const UpdateService = () => {
 
   const updateService = async (id: string, updatedData: UpdatedData) => {
     const response = await fetch(
-      `https://event360-server-phi.vercel.app/services/${id}`,
+      `https://event360-gold.vercel.app/services/${id}`,
       {
         method: "PUT",
         headers: { "Content-Type": "application/json" },

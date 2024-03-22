@@ -16,7 +16,7 @@ const AddRecentEvents = () => {
     mutationFn: async (data: FormData) => {
       try {
         const response = await fetch(
-          "https://event360-server-phi.vercel.app/recent",
+          "https://event360-gold.vercel.app/recent",
           {
             method: "POST",
             body: JSON.stringify(data),

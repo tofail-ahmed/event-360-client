@@ -26,7 +26,7 @@ const UpdateDashBoardEvents = () => {
   useEffect(() => {
     const fetchData = async () => {
       const response = await fetch(
-        `https://event360-server-phi.vercel.app/eventItems/${id}`
+        `https://event360-gold.vercel.app/eventItems/${id}`
       );
       const data = await response.json();
       setEventItem(data.eventItem);
@@ -39,9 +39,9 @@ const UpdateDashBoardEvents = () => {
     fetchData();
   }, [id]);
 
-  const updateService = async (id:string, updatedData:IUpdatedData) => {
+  const updateService = async (id: string, updatedData: IUpdatedData) => {
     const response = await fetch(
-      `https://event360-server-phi.vercel.app/eventItems/${id}`,
+      `https://event360-gold.vercel.app/eventItems/${id}`,
       {
         method: "PUT",
         headers: { "Content-Type": "application/json" },

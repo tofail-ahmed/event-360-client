@@ -16,7 +16,7 @@ const AddReviews = () => {
     mutationFn: async (data: FormData) => {
       try {
         const response = await fetch(
-          "https://event360-server-phi.vercel.app/review",
+          "https://event360-gold.vercel.app/review",
           {
             method: "POST",
             body: JSON.stringify(data),

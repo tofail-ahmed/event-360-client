@@ -13,9 +13,9 @@ interface Event {
   image: string;
 }
 const DashBoardEvents = () => {
-  const deleteEvent = async (id:string) => {
+  const deleteEvent = async (id: string) => {
     const res = await fetch(
-      `https://event360-server-phi.vercel.app/eventItems/${id}`,
+      `https://event360-gold.vercel.app/eventItems/${id}`,
       {
         method: "DELETE",
       }
@@ -34,13 +34,11 @@ const DashBoardEvents = () => {
       queryClient.invalidateQueries("eventItems" as InvalidateQueryFilters);
     },
   });
-  const handleDelete = (id:string) => {
+  const handleDelete = (id: string) => {
     deleteeventMutation(id);
   };
   const fetchData = async () => {
-    const res = await fetch(
-      `https://event360-server-phi.vercel.app/eventItems`
-    );
+    const res = await fetch(`https://event360-gold.vercel.app/eventItems`);
     const data = await res.json();
     return data;
   };

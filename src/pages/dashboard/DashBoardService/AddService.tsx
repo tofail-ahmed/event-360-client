@@ -16,7 +16,7 @@ const AddService = () => {
     mutationFn: async (data: FormData) => {
       try {
         const response = await fetch(
-          "https://event360-server-phi.vercel.app/service",
+          "https://event360-gold.vercel.app/service",
           {
             method: "POST",
             body: JSON.stringify(data),
