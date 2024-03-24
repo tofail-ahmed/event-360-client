@@ -5,7 +5,7 @@ import { FaUniversalAccess } from "react-icons/fa6";
 
 const FooterDown = () => {
   return (
-    <Container className="flex justify-between items-center">
+    <Container className="flex justify-between items-center lg:flex-row flex-col space-y-4">
       <div>@2024.All rights reserved</div>
       <div className="flex  items-center gap-4">
         <p>Terms</p>

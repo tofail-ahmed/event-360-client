@@ -97,8 +97,8 @@ const Team = () => {
           Meet our Dynamic Team{" "}
         </h1>
         <div  className="grid lg:grid-cols-4 grid-cols-2 gap-4">
-          {team.map((member) => (
-            <motion.div drag dragSnapToOrigin={true}  className="bg-zinc-600/30 p-2 rounded-md ">
+          {team.map((member,idx) => (
+            <motion.div drag dragSnapToOrigin={true} key={idx}  className="bg-zinc-600/30 p-2 rounded-md ">
               <img
                 data-aos="fade-up"
                 data-aos-delay="500"

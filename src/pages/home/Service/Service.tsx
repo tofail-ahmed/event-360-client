@@ -33,11 +33,6 @@ const Service = () => {
   // };
 
   const handleHover = (idx:number, mouse:number) => {
-    // setIsHovered((prehovered)=>{
-    //   const temp=[...prehovered];
-    //   temp[idx]=!isHovered[idx];
-    //   return temp;
-    // })
     if (mouse === 1) {
       setIsHovered((prevHovered) => {
         const temp = [...prevHovered];
