@@ -22,7 +22,7 @@ const DashBoardEvents = () => {
     );
     const deleteData = await res.json();
     if (deleteData.deletedCount) {
-      toast.success("Event Deleted Succesfully");
+      // toast.success("Event Deleted Succesfully");
     }
     return deleteData;
   };
@@ -34,8 +34,45 @@ const DashBoardEvents = () => {
       queryClient.invalidateQueries("eventItems" as InvalidateQueryFilters);
     },
   });
-  const handleDelete = (id: string) => {
+  // const handleDelete = (id: string) => {
+  //   deleteeventMutation(id);
+  // };
+  const deleteItem = (id:string) => {
+    // Your delete logic here
     deleteeventMutation(id);
+    // Show a success message
+    toast.success("Event deleted successfully!", {
+      position: "top-right",
+    });
+  };
+  const confirmDelete = (id:string) => {
+    toast.warn(
+      <div>
+        <p>Are you sure you want to delete this item?</p>
+        <div className="flex gap-4">
+          <button
+            className="bg-red-300 px-2 rounded-md"
+            onClick={() => deleteItem(id)}
+          >
+            Yes
+          </button>
+          <button
+            className="bg-green-300 px-2 rounded-md"
+            onClick={() => toast.dismiss}
+          >
+            No
+          </button>
+        </div>
+      </div>,
+      {
+        position: "top-right",
+        autoClose: false,
+        closeOnClick: true,
+        closeButton: true,
+        draggable: false,
+        progress: undefined,
+      }
+    );
   };
   const fetchData = async () => {
     const res = await fetch(`https://event360-gold.vercel.app/eventItems`);
@@ -90,7 +127,8 @@ const DashBoardEvents = () => {
                 </NavLink>
               </button>
               <button
-                onClick={() => handleDelete(event._id)}
+                // onClick={() => handleDelete(event._id)}
+                onClick={()=>confirmDelete(event._id)}
                 className="bg-red-600 text-red-400 text-md font-semibold hover:bg-blue-200 px-2 py-1 rounded-sm flex gap-2 items-center duration-500"
               >
                 <span className="text-2xl border-2 border-red-400 rounded-full p-1 text-red-400">
