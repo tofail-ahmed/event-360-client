@@ -26,6 +26,7 @@ const Gallery = () => {
   if (error) {
     return <div>Error: {error.message}</div>;
   }
+  console.log(data)
   return (
     <Container className="flex justify-between items-center lg:flex-row flex-col py-16">
       <div>
